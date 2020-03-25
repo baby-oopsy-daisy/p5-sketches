@@ -6,7 +6,7 @@ function setup() {
 	noCanvas();
 	button = select("#submit");
 	paragraph_element = select("#par");
-	text = createInput(); 
+	text = select("#text_area");
 
 	button.mousePressed(submitted);
 }
