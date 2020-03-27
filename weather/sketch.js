@@ -6,7 +6,7 @@ let circles = [];
 let flag = false;
 
 let LOCATION;
-let address = "http://api.openweathermap.org/data/2.5/weather?units=metric&q="; 
+let address = "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?units=metric&q="; 
 let key = "&APPID=6241ebfbdd4e8731ae8e6099750d4f33";
 let url;
 
