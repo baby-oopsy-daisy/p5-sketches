@@ -19,7 +19,7 @@ const loaded = (data) => {
 
 function draw(){
 	background(0);
-	loadJSON("http://api.open-notify.org/astros.json", loaded, "JSONP");
+	loadJSON("//api.open-notify.org/astros.json", loaded, "JSONP");
 	
 
 	randomSeed(60);
