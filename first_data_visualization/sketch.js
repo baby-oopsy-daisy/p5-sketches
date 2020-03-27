@@ -19,7 +19,7 @@ const loaded = (data) => {
 
 function draw(){
 	background(0);
-	loadJSON("//api.open-notify.org/astros.json", loaded, "JSONP");
+	loadJSON(" https://cors-anywhere.herokuapp.com/http://api.open-notify.org/astros.json", loaded, "JSONP");
 	
 
 	randomSeed(60);
