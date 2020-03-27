@@ -35,7 +35,7 @@ function setup() {
 					flag = true;
 					preview_area.html(data.main.temp + "°C");
 				});
-		// loadJSON("http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=6241ebfbdd4e8731ae8e6099750d4f33", data_loaded);
+		// loadJSON("https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=6241ebfbdd4e8731ae8e6099750d4f33", data_loaded);
 	});
 
 
