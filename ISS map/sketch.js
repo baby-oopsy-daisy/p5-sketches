@@ -1,4 +1,4 @@
-let url = "http://api.open-notify.org/iss-now.json";
+let url = "https://cors-anywhere.herokuapp.com/http://api.open-notify.org/iss-now.json";
 let longitude, latitude;
 let min_latitude = -90, max_latitude = 90;
 let min_longitude = -180, max_longitude = 180;
