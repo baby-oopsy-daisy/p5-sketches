@@ -18,7 +18,7 @@ function setup() {
 	// noCanvas();
 	
 	createCanvas(600, 400);
-	bg.resize(width, height);
+	// bg.resize(width, height);
 	curr_position = createVector(0,0);
 	prev_position = createVector(0,0);
 	background(bg);
@@ -65,7 +65,7 @@ function setup() {
 	
 function draw(){
 	// background(bg);
-	if (count >= 1000){
+	if (count >= 5000){
 	load();
 	count = 0;
 	}
