@@ -10,8 +10,8 @@ let bg;
 let count = 10000;
 
 function preload(){
-// 	bg = loadImage("https://api.mapbox.com/styles/v1/mapbox/dark-v9/static/0,0,0,0,0/600x400?access_token=pk.eyJ1IjoicHJlbWplZXQiLCJhIjoiY2s4YnF5aDcxMGZjbTNlb2Fha254ODg4ciJ9.1ueZ7mTfahwJTJr8V0QGaw");
-	bg = loadImage("https://api.mapbox.com/styles/v1/mapbox/dark-v10/static/1/600x400?access_token=pk.eyJ1IjoicHJlbWplZXQiLCJhIjoiY2s4YnF5aDcxMGZjbTNlb2Fha254ODg4ciJ9.1ueZ7mTfahwJTJr8V0QGaw");
+	bg = loadImage("https://api.mapbox.com/styles/v1/mapbox/satellite-streets-v11/static/0,0,0,0,0/600x400?access_token=pk.eyJ1IjoicHJlbWplZXQiLCJhIjoiY2s4YnF5aDcxMGZjbTNlb2Fha254ODg4ciJ9.1ueZ7mTfahwJTJr8V0QGaw");
+// 	bg = loadImage("https://api.mapbox.com/styles/v1/mapbox/dark-v10/static/1/600x400?access_token=pk.eyJ1IjoicHJlbWplZXQiLCJhIjoiY2s4YnF5aDcxMGZjbTNlb2Fha254ODg4ciJ9.1ueZ7mTfahwJTJr8V0QGaw");
 }
 
 function setup() {
