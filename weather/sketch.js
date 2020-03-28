@@ -30,7 +30,7 @@ function setup() {
 				LOCATION = place.value();
 				
 
-				url = address+LOCATION+key;
+				url = CORS+address+LOCATION+key;
 				loadJSON(url, (incoming_data) => {
 					data = incoming_data;
 					flag = true;
