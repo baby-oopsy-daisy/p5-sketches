@@ -40,7 +40,7 @@ function setup() {
 	curr_position = createVector(0,0);
 	prev_position = createVector(0,0);
 	background(bg);
-	mask.background(0);
+	mask.clear();
 }
 
 
