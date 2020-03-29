@@ -82,7 +82,7 @@ function setup() {
 
 	
 function draw(){
-	mask.background(0);
+// 	mask.background(0);
 	mask.clear();
 	background(bg);
 	
