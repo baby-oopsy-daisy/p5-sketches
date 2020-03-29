@@ -40,7 +40,7 @@ function setup() {
 	curr_position = createVector(0,0);
 	prev_position = createVector(0,0);
 	background(bg);
-// 	mask.clear();
+	mask.background(0);
 }
 
 
@@ -88,6 +88,7 @@ function setup() {
 function draw(){
 	
 	background(bg);
+	mask.background(0);
 
 	if (count >= 5000){
 	load();
