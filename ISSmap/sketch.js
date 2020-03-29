@@ -82,8 +82,8 @@ function setup() {
 
 	
 function draw(){
-// 	mask.background(0);
-	mask.clear();
+	mask.background(0);
+// 	mask.clear();
 // 	background(bg);
 	
 	if (count >= 5000){
@@ -98,7 +98,7 @@ function draw(){
 		
 		mask.strokeWeight(1);
 		mask.stroke(255,0,0);
-		mask.fill(200, 50);
+		mask.fill(200, 20);
 		mask.ellipse(curr_position.x, curr_position.y, 25, 25);	
 		image(mask, 0, 0);
 		
