@@ -81,8 +81,6 @@ function setup() {
 function draw(){
 	
 	
-
-		
 	if (count >= 5000){
 	load();
 	count = 0;
@@ -94,9 +92,6 @@ function draw(){
 		line(prev_position.x, prev_position.y, curr_position.x, curr_position.y);
 		}
 	count += 1.5;
-
-
-
 
 
 }
