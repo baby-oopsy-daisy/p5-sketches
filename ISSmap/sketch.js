@@ -92,6 +92,9 @@ function draw(){
 	}
 
 	if(flag){
+		stroke(255, 0, 0);
+		strokeWeight(3);
+		line(prev_position.x, prev_position.y, curr_position.x, curr_position.y);
 		
 		mask.strokeWeight(1);
 		mask.stroke(255,0,0);
@@ -99,9 +102,7 @@ function draw(){
 		mask.ellipse(curr_position.x, curr_position.y, 25, 25);	
 		image(mask, 0, 0);
 		
-		stroke(255, 0, 0);
-		strokeWeight(3);
-		line(prev_position.x, prev_position.y, curr_position.x, curr_position.y);
+		
 
 	}
 	count += 1.5;
