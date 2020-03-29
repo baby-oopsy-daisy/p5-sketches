@@ -8,6 +8,7 @@ let first  =true;
 let data;
 let bg;
 let count = 10000;
+let info;
 
 function preload(){
 	bg = loadImage("https://api.mapbox.com/styles/v1/mapbox/satellite-v9/static/0,0,0,0,0/600x400?access_token=pk.eyJ1IjoicHJlbWplZXQiLCJhIjoiY2s4YnF5aDcxMGZjbTNlb2Fha254ODg4ciJ9.1ueZ7mTfahwJTJr8V0QGaw");
@@ -15,11 +16,14 @@ function preload(){
 }
 
 function setup() {
-	// createCanvas(windowWidth, windowHeight);
-	// noCanvas();
+
+	//ALLIGNS THE CANVAS TO THE CENTER
+	let cnv = createCanvas(600, 400);
+	var x = (windowWidth - width) / 2;
+	var y = (windowHeight - 500) / 2;
+	cnv.position(x, y);
 	
-	createCanvas(600, 400);
-	// bg.resize(width, height);
+	info = select("#info");
 	curr_position = createVector(0,0);
 	prev_position = createVector(0,0);
 	background(bg);
@@ -31,6 +35,9 @@ function setup() {
 	// setInterval(
 		const load = () => {
 			loadJSON(url, (data) => {
+
+			info.html("THE ISS is currently at : " + data.iss_position.latitude + "°N, " + data.iss_position.longitude + "°E");
+				
 			latitude = map(data.iss_position.latitude, min_latitude, max_latitude, height, 0);
 			longitude = map(data.iss_position.longitude, min_longitude, max_longitude, 0, width);
 			flag = true;

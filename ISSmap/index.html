@@ -11,13 +11,13 @@
 	<script src="libraries/p5.dom.js"></script>
 	<script src="libraries/p5.sound.js"></script>
 	<script src="sketch.js"></script>
-	<script src="mapdata.js"></script>
+	
 
 	<style>
 		body {
 			margin:0;
 			padding:0;
-			overflow: hidden;
+			overflow: visible;
 		}
 		canvas {
 			margin:auto;
@@ -25,5 +25,25 @@
 	</style>
 </head>
 <body>
+	<h1 id = "header" align = "center"><u>International Space Station Live Path Trace</u></h1>
+
+	<b><p id = "info" align = "center"></p></b>
+
+
+	<div style = "position:relative; top : 510px; background-color:yellow;" align = "center">
+		<p>The sketch here traces the path taken by the ISS(<b>International Space Station</b>).</P>
+		
+		
+			<ol>
+				<p><u>The Sketch uses three API's</u></p>
+				<li><a href = "https://docs.mapbox.com/help/how-mapbox-works/web-apps/" target = "_blank">MAPBOX : For loading the map</a></li>
+				<li><a href = "http://open-notify.org/Open-Notify-API/ISS-Location-Now/" target = "_blank">OPEN NOTIFY : For the position data of ISS (in Longitude & Latitude)</a></li>
+				<li><a href = "https://cors-anywhere.herokuapp.com/" target = "_blank">CORS-anywhere : To handle cross-origin requests</a></li>
+			</ol>
+		
+		<p>
+			The location is updated at an interval of around 1 - 1.3 minutes.
+		</p>
+	</div>
 </body>
 </html>
