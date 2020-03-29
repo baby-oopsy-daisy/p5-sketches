@@ -31,7 +31,7 @@ function setup() {
 	y = (windowHeight - 500) / 2;
 	cnv.position(x, y);
 	mask.position(x,y);
-	pixelDensity(1);
+// 	pixelDensity(1);
 
 
 	par.position(0,y+425);
@@ -40,7 +40,8 @@ function setup() {
 	curr_position = createVector(0,0);
 	prev_position = createVector(0,0);
 	background(bg);
-// 	mask.clear();
+	mask.clear();
+	
 }
 
 
@@ -88,8 +89,7 @@ function setup() {
 function draw(){
 	
 	background(bg);
-	mask.clear();
-
+	
 	if (count >= 5000){
 	load();
 	count = 0;
@@ -100,10 +100,12 @@ function draw(){
 // 		fill(255, 50);
 // 		stroke(255,50, 50);
 // 		ellipse(curr_position.x, curr_position.y, 45, 45);
-
-		mask.stroke(255, 0, 0);
-		mask.strokeWeight(3);
-		mask.line(prev_position.x, prev_position.y, curr_position.x, curr_position.y);
+		
+		mask.fill(255,0,0)
+		mask.ellipse(curr_position.x, curr_position.y, 10, 10)
+// 		mask.stroke(255, 0, 0);
+// 		mask.strokeWeight(3);
+// 		mask.line(prev_position.x, prev_position.y, curr_position.x, curr_position.y);
 		image(mask, 0, 0);
 		
 		
