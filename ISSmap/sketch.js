@@ -27,7 +27,7 @@ function setup() {
 	var y = (windowHeight - 500) / 2;
 	cnv.position(x, y);
 	mask.position(x,y);
-	mask.clear();
+	
 
 	par.position(0,y+425);
 	par.size(windowWidth);
@@ -77,10 +77,11 @@ function setup() {
 	// , 120000);
 
 
-	let x = 50;
+	// let x = 50;
 
 	
 function draw(){
+	mask.background(0);
 	mask.clear();
 	background(bg);
 	
@@ -104,6 +105,12 @@ function draw(){
 
 
 
+	// mask.strokeWeight(1);
+	// mask.stroke(255,0,0);
+	// mask.fill(200, 50);
+	// mask.ellipse(x, 50, 25, 25);	
+	// image(mask, 0, 0);
+	// x += 1;
 
 
 }
