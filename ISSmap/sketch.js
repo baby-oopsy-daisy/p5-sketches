@@ -28,7 +28,7 @@ function setup() {
 	cnv.position(x, y);
 	mask.position(x,y);
 	mask.pixelDensity(1);
-	
+	mask.clear();
 
 	par.position(0,y+425);
 	par.size(windowWidth);
@@ -83,7 +83,7 @@ function setup() {
 	
 function draw(){
 	mask.background(0);
-// 	mask.clear();
+	mask.clear();
 // 	background(bg);
 	
 	if (count >= 5000){
