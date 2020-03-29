@@ -27,6 +27,7 @@ function setup() {
 	var y = (windowHeight - 500) / 2;
 	cnv.position(x, y);
 	mask.position(x,y);
+	mask.pixelDensity(1);
 	
 
 	par.position(0,y+425);
