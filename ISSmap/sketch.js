@@ -31,7 +31,7 @@ function setup() {
 	y = (windowHeight - 500) / 2;
 	cnv.position(x, y);
 	mask.position(x,y);
-	
+	mask.pixelDensity(1);
 
 
 	par.position(0,y+425);
@@ -40,7 +40,7 @@ function setup() {
 	curr_position = createVector(0,0);
 	prev_position = createVector(0,0);
 	background(bg);
-	mask.clear();
+// 	mask.clear();
 }
 
 
@@ -96,7 +96,7 @@ function draw(){
 
 	if(flag){
 
-		fill(255, 40);
+		fill(255, 50);
 		stroke(255,50, 50);
 		ellipse(curr_position.x, curr_position.y, 45, 45);
 
