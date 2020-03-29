@@ -88,7 +88,7 @@ function setup() {
 function draw(){
 	
 	background(bg);
-// 	mask.clear();
+	mask.clear();
 
 	if (count >= 5000){
 	load();
