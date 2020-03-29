@@ -97,7 +97,7 @@ function draw(){
 	if(flag){
 
 		fill(255, 40);
-		stroke(255,50, 50,);
+		stroke(255,50, 50);
 		ellipse(curr_position.x, curr_position.y, 45, 45);
 
 		mask.stroke(255, 0, 0);
