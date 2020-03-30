@@ -31,7 +31,8 @@ function setup() {
 	y = (windowHeight - 500) / 2;
 	cnv.position(x, y);
 	mask.position(x,y);
-// 	pixelDensity(1);
+	mask.pixelDensity(1);
+	
 
 
 	par.position(0,y+425);
@@ -55,13 +56,13 @@ function setup() {
 				
 			latitude = map(data.iss_position.latitude, min_latitude, max_latitude, height, 0);
 			longitude = map(data.iss_position.longitude, min_longitude, max_longitude, 0, width);
-			flag = true;
+			
 			if(first){
 				curr_position.x =longitude;
 				curr_position.y = latitude;
 				prev_position.x = longitude; 
 				prev_position.y = latitude;
-
+				flag = true;
 				first = !first;
 			}
 			else{
@@ -71,7 +72,7 @@ function setup() {
 				curr_position.x = longitude;
 				curr_position.y = latitude;
 
-				if((prev_position.x - curr_position.y) > (width/2)){
+				if((prev_position.x - curr_position.x) > (width/2)){
 					prev_position.x = curr_position.x;
 					prev_position.y = curr_position.y;
 				}
@@ -84,7 +85,7 @@ function setup() {
 	
 
 
-
+let currX = 10, currY=100, prevY = 100, prevX =0;
 	
 function draw(){
 	
@@ -97,12 +98,10 @@ function draw(){
 
 	if(flag){
 
-// 		fill(255, 50);
-// 		stroke(255,50, 50);
-// 		ellipse(curr_position.x, curr_position.y, 45, 45);
-		
-// 		mask.fill(255,0,0)
-// 		mask.ellipse(curr_position.x, curr_position.y, 10, 10)
+		fill(255, 40);
+		stroke(255,50, 50,);
+		ellipse(curr_position.x, curr_position.y, 80, 80);
+
 		mask.stroke(255, 0, 0);
 		mask.strokeWeight(3);
 		mask.line(prev_position.x, prev_position.y, curr_position.x, curr_position.y);
@@ -111,7 +110,26 @@ function draw(){
 		
 	}
 	count += 1.5;
+
+
+
+
+	//Extra for testing the create grapics
+	// 			fill(255, 40);
+	// 	stroke(255,50, 50,);
+	// 	ellipse(currX, currY, 45, 45);
 	
+	// 	mask.stroke(255, 0, 0);
+	// 	mask.strokeWeight(3);
+	// 	mask.line(prevX, prevY, currX, currY);
+	// 	image(mask, 0, 0);
+
+	// prevx =currX;
+	
+	// currX += 1;
+
+
+
 }
 
 
