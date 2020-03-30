@@ -101,11 +101,11 @@ function draw(){
 // 		stroke(255,50, 50);
 // 		ellipse(curr_position.x, curr_position.y, 45, 45);
 		
-		mask.fill(255,0,0)
-		mask.ellipse(curr_position.x, curr_position.y, 10, 10)
-// 		mask.stroke(255, 0, 0);
-// 		mask.strokeWeight(3);
-// 		mask.line(prev_position.x, prev_position.y, curr_position.x, curr_position.y);
+// 		mask.fill(255,0,0)
+// 		mask.ellipse(curr_position.x, curr_position.y, 10, 10)
+		mask.stroke(255, 0, 0);
+		mask.strokeWeight(3);
+		mask.line(prev_position.x, prev_position.y, curr_position.x, curr_position.y);
 		image(mask, 0, 0);
 		
 		
