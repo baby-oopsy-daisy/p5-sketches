@@ -23,11 +23,13 @@ let par;//FOR MANAGING THE lOWER PARAGRAPH ELEMNT INSIDE THE YELLOW AREA
 //THE LINE OF TRACE IS DRAWN ON THE MASK
 let mask, cnv;
 
+
 // THE PRELOAD FUNCTION EXECUTES IN THE BEGINNING AND LOADS THE BACKGROUND IMG
 function preload(){
 	bg = loadImage(background_image);
 
 }
+
 
 
 function setup() {
