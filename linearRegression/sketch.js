@@ -70,9 +70,13 @@ function mousePressed(){
 
 // CANVAS_0 LOGIC FOR POINTS AND LINE
 const cnv_0 = () => {
+
 	cnv[0].background(0);
+	
+	// SHOW THE LINE WITH DIFFERENTIAL SOLUTION
 	reg_line_differential.show(cnv[0], point_array);
-	// SHOW THE LINE
+	
+	// SHOW THE LINE WITH GRADIENT DESCEND 
 	reg_line_gradient.show(cnv[0], point_array);
 	
 	// SHOW THE POINTS
@@ -82,13 +86,19 @@ const cnv_0 = () => {
 }
 
 function windowResized() {
+	// Location.reload(true);
 	resizeCanvas(windowWidth*0.3, windowWidth*0.3);
 	x = (windowWidth - width) / 2;
 	y = (windowHeight - height) / 2;
 	temp.position(x, y);
-	cnv.forEach((canvas) => {
-		canvas.width = temp.width/2;
-		canvas.height = temp.height/2;
-	});
-  }
+	// window.location.relode(true);
+	// cnv.forEach((canvas) => {
+	// 	canvas.resizeCanvas(width/2,height/2);
+	// });
+	// // for(let i = 0; i< 4; i++){
+	// // 	cnv[i].resiz(temp.width/2, temp.height/2);
+	// // }
+	console.log("executed");
+	location.reload(true);
+}
 
