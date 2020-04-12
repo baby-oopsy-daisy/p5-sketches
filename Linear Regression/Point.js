@@ -11,8 +11,10 @@ class Point{
     }
 
     show(cnv){
-        cnv.noStroke();
-        cnv.fill(255);
+        
+        cnv.fill(255, 40);
+        cnv.stroke(255);
+        cnv.strokeWeight(0.8);
         let x = cnv.map(this.val.x, 0, 1, 0, cnv.width);
         let y = cnv.map(this.val.y, 0, 1, cnv.height, 0);
         cnv.ellipse(x, y, this.width * 2);
