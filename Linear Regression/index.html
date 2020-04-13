@@ -5,7 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>instance mode</title>
+	<title>LINEAR REGRESSION</title>
 
 	<script src="libraries/p5.js"></script>
 	<script src="libraries/p5.dom.js"></script>
@@ -13,15 +13,27 @@
 	<script src="sketch.js"></script>
 	<script src="Point.js"></script>
 	<script src="Regression.js"></script>
+	<script src="CostPlot.js"></script>
+
 
 	<style>
 		body {
 			margin:0;
 			padding:0;
 			overflow: SCROLL;
+
+			background-image: url('bg.jpg');
+		    background-repeat: no-repeat;
+			background-attachment: fixed;
+  			background-size: cover;
+
 		}
 		canvas {
 			margin:auto;
+		}
+
+		h1 {
+			font-size: 50px;
 		}
 
 		#wrapper {
@@ -67,12 +79,14 @@
 	</style>
 </head>
 <body>
-	<h1 align = "center">INSTANCE MODE EXAMPLE</h1>
+	<h1 align = "center"><U>LINEAR REGRESSION FOR ONE VARIABLE</U></h1>
+	<button id = "reset"><b>RESET</b></button>
 	<div  align = "center" id = "wrapper">
 		<div   id = "cnv_0"></div>
 		<div   id = "cnv_1"></div>
 		<div  id = "cnv_2"></div>
 		<div  id = "cnv_3"></div>
 	</div>
+	
 </body>
 </html>

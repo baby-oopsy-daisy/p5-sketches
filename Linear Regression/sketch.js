@@ -4,7 +4,9 @@
 
 let cnv = Array(4).fill();// ARRAY OF CANVAS 
 let points = [] // ARRAY TO STORE THE PONTS
-let reg_line; 
+let reg_line;
+let reset; 
+let cost_plot;
 
 
 // CANVAS 0 IS WHERE THE POINTS ARE TO BE DRAWN
@@ -15,12 +17,14 @@ let canvas_0 = (c_0) => { // CANVAS 0
 		c_0.createCanvas((c_0.windowWidth/2)*0.3, (c_0.windowWidth/2)*0.3);
 		c_0.background(0);
 		reg_line = new Regression();
+
+		
 	}
 
 	c_0.draw = () =>{
 		c_0.background(0);
 		if(points.length > 0){// DISPLAY WACH POINTS
-			reg_line.show(c_0, points, "d");
+			reg_line.show(c_0, points, "g");
 			points.forEach( (x) => x.show(c_0));
 			
 		}
@@ -42,11 +46,11 @@ let canvas_0 = (c_0) => { // CANVAS 0
 	c_0.windowResized = () => {// WHEN THE WINDOW IS RESIZED
 		c_0.resizeCanvas((c_0.windowWidth/2)*0.3, (c_0.windowWidth/2)*0.3); // RESIZE THE CANVAS
 		c_0.background(0);
-		points.forEach( (x) => {
-			x.recalculate_width(c_0)// RE-CALCULATE THE WIDTH FOR EACH POINT
-			
-		});
+		reg_line.m = 0; 
+		reg_line.c = 0;
+
 	}
+
 
 }
 
@@ -63,6 +67,7 @@ let canvas_1 = (c_1) => { // CANVAS 1
 	c_1.draw = () =>{
 		c_1.background(0);
 		if(points.length > 0){
+			reg_line.show(c_1, points, "d");
 			points.forEach( (x) => x.show(c_1));
 		}
 	}
@@ -85,15 +90,28 @@ let canvas_2 = (c_2) => { // CANVAS 2
 	c_2.setup = () =>{
 		c_2.createCanvas((c_2.windowWidth/2)*0.3, (c_2.windowWidth/2)*0.3);
 		c_2.background(0);
+		cost_plot = new CostPlot(points, c_2);
+		reset = c_2.select("#reset"); // RESET BUTTON TO RESET THE POINTS
+		reset.mousePressed( () => {
+			reg_line.iteraions = 0;
+			c_2.background(0)
+			points = [];
+			
+		}
+			);
+		
 	}
 
 	c_2.draw = () =>{
-
+		if(points.length > 0){
+			cost_plot.show(points, reg_line, c_2);
+		}
 	}
 
 	c_2.windowResized = () => {
 		c_2.resizeCanvas((c_2.windowWidth/2)*0.3, (c_2.windowWidth/2)*0.3);
 		c_2.background(0);
+		reg_line.iteraions = 0;
 	}
 
 }
