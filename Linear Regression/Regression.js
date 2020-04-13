@@ -4,7 +4,7 @@ class Regression{
         //THESE ARE FOR GRADIENT ALGO TO IMPROVE
         this.m  = 0;
         this.c = 0;
-        this.iteraions = 0;
+        this.prev = 0;
         // THE PARAMETER VALUES FOR THE DIFFERENTIAL ALGO ARE MADE LOCAL
         
         // console.log(this.m, this.c);
@@ -16,6 +16,8 @@ class Regression{
         this.width = cnv.height * 0.01;
 
         this.points = points;
+
+
         this.calculate_parameters(cnv, method)
 
 
@@ -31,7 +33,7 @@ class Regression{
     differential(cnv){
         let mean_x = 0;
         let mean_y = 0;
-        let mean_xx = 0
+        let mean_xx = 0;
         let mean_xy = 0;
         let x = 0;
         let y = 0;
@@ -71,13 +73,15 @@ class Regression{
 
     gradient(cnv){ // GRADIENT DESCENT ALGO
 
-        
+
+
+
         let hypo = 0; // HYPOTHESIS
         let cost = 0; // COST FUNCTION 
         let curr_x = 0
         let temp_m = 0;
         let temp_c = 0;
-        let learing_rate = 0.008; // LEARNING RATE
+        let learing_rate = 0.003; // LEARNING RATE
         this.points.forEach( (data) => {
 
             curr_x = data.val.x;
@@ -90,7 +94,6 @@ class Regression{
 
         this.m -= (learing_rate * temp_m);
         this.c -= (learing_rate * temp_c);
-        this.iteraions++;
         this.draw_line(this.m, this.c, cnv)
 
     }
@@ -102,19 +105,32 @@ class Regression{
    
     draw_line(m, c, cnv){
 
-        let x_min = 0;
-        let x_max = cnv.width;
-        let y_min = (x_min * m) + c
-        let y_max = (x_max * m) + c
+        // let x_min = 0;
+        // let x_max = cnv.width;
+        // let y_min = (x_min * m) + c
+        // let y_max = (x_max * m) + c
         
-        x_min = cnv.map(x_min, 0, 1, 0, cnv.width);
-        x_max = cnv.map(x_max, 0, 1, 0, cnv.width);
-        y_min = cnv.map(y_min, 0, 1, cnv.height, 0);
-        y_max = cnv.map(y_max, 0, 1, cnv.height, 0);
+        // x_min = cnv.map(x_min, 0, 1, 0, cnv.width);
+        // x_max = cnv.map(x_max, 0, 1, 0, cnv.width);
+        // y_min = cnv.map(y_min, 0, 1, cnv.height, 0);
+        // y_max = cnv.map(y_max, 0, 1, cnv.height, 0);
 
+        // cnv.stroke(255);
+        // cnv.strokeWeight(this.width);
+        // cnv.line(x_min, y_min, x_max, y_max)
+        cnv.noFill();
         cnv.stroke(255);
         cnv.strokeWeight(this.width);
-        cnv.line(x_min, y_min, x_max, y_max)
+        cnv.beginShape();
+        for(let i =0; i< cnv.width; i += 1){
+
+            let x = cnv.map(i, 0, cnv.width, 0, 1);
+            let y = m*x +c;
+            y = cnv.map(y,0,1, cnv.height, 0);
+            cnv.vertex(i,y);
+
+        }
+        cnv.endShape();
     
     }
 

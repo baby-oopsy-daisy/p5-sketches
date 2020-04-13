@@ -5,8 +5,9 @@
 let cnv = Array(4).fill();// ARRAY OF CANVAS 
 let points = [] // ARRAY TO STORE THE PONTS
 let reg_line;
-let reset; 
+let reset_button; 
 let cost_plot;
+let calc_cost_button;
 
 
 // CANVAS 0 IS WHERE THE POINTS ARE TO BE DRAWN
@@ -17,7 +18,13 @@ let canvas_0 = (c_0) => { // CANVAS 0
 		c_0.createCanvas((c_0.windowWidth/2)*0.3, (c_0.windowWidth/2)*0.3);
 		c_0.background(0);
 		reg_line = new Regression();
-
+		reset_button = c_0.select("#reset"); // RESET BUTTON TO RESET THE POINTS
+		reset_button.mousePressed( () =>{
+			points = [];
+			reg_line.m = 0; 
+			reg_line.c = 0;
+	
+		});
 		
 	}
 
@@ -86,32 +93,51 @@ let canvas_1 = (c_1) => { // CANVAS 1
 
 let canvas_2 = (c_2) => { // CANVAS 2
 
-	 
+	 let flag = false;
+	 let calc_flag = false;
 	c_2.setup = () =>{
 		c_2.createCanvas((c_2.windowWidth/2)*0.3, (c_2.windowWidth/2)*0.3);
 		c_2.background(0);
-		cost_plot = new CostPlot(points, c_2);
-		reset = c_2.select("#reset"); // RESET BUTTON TO RESET THE POINTS
-		reset.mousePressed( () => {
-			reg_line.iteraions = 0;
-			c_2.background(0)
-			points = [];
-			
-		}
-			);
-		
+		calc_cost_button = c_2.createButton("DRAW ITERATIONS v/s OVERALL-ERROR");
+		calc_cost_button.center();
+		cost_plot = new CostPlot()
+		calc_cost_button.mousePressed( () => {
+			c_2.reset();
+			flag = true;
+		});
 	}
 
 	c_2.draw = () =>{
-		if(points.length > 0){
-			cost_plot.show(points, reg_line, c_2);
+		calc_cost_button.position(c_2.width/2, c_2.height+30);
+		if(flag){
+			cost_plot.show(c_2, points);
+			flag = false;
+			calc_flag = true;
 		}
+		if(calc_flag){
+			cost_plot.cost(c_2, reg_line)
+
+			if(cost_plot.iter > cost_plot.limit){
+				c_2.noLoop();
+			}
+
+		}
+		
 	}
 
 	c_2.windowResized = () => {
 		c_2.resizeCanvas((c_2.windowWidth/2)*0.3, (c_2.windowWidth/2)*0.3);
 		c_2.background(0);
-		reg_line.iteraions = 0;
+		
+	}
+
+	c_2.reset = () => {
+
+		reg_line.m = 0;
+		reg_line.c = 0;
+		cost_plot.iter = 0;
+		c_2.background(0);
+
 	}
 
 }
@@ -127,6 +153,7 @@ let canvas_3 = (c_3) => { // CANVAS 3
 	c_3.setup = () =>{
 		c_3.createCanvas((c_3.windowWidth/2)*0.3, (c_3.windowWidth/2)*0.3);
 		c_3.background(0);
+
 	}
 
 	c_3.draw = () =>{

@@ -1,60 +1,43 @@
 class CostPlot{
 
-    constructor(points, cnv){
-        this.prev = points.length;
-        this.limit = 1000;
-        this.col = cnv.createVector(cnv.random(255), cnv.random(255), cnv.random(255));
-        
-    }
+  constructor(){
+      this.iter = 0;
+      this.limit = 200;
+      
+  }
 
-    show(points, reg_line, cnv){
-        this.points = points;
-        
-        if(points.length > this.prev){
-            
-            reg_line.iteraions = 0;
-            cnv.background(0);
-            reg_line.m = 0;
-            reg_line.c = 0;
-            this.col.x = cnv.random(255);
-            this.col.y = cnv.random(255);
-            this.col.z = cnv.random(255);
-            this.prev = points.length;
-        }
+  show(cnv, points){
 
-        this.calculate_cost(reg_line)
-        console.log(this.cost/points.length);
-
-        let x = cnv.map(reg_line.iteraions, 0, this.limit, 5, cnv.width)
-        let y = cnv.map(this.cost/points.length, 0, 0.5, cnv.height, 0);
-
-        
-        cnv.strokeWeight(cnv.height * 0.03);
-        cnv.stroke(this.col.x, this.col.y, this.col.z);
-        cnv.point(x, y);
+    this.points = points;
 
     }
 
-    calculate_cost(reg_line){
+  cost(cnv, reg_line){
+    this.iter++;
+    let cost = 0;
+    let m = reg_line.m;
+    let c = reg_line.c;
+    let hypo;
+    this.points.forEach(data => {
+      hypo = m*data.val.x + c;
+      hypo = Math.pow(hypo-data.val.y, 2);
+      cost += hypo;
+      });
+      cost /= (2*this.points.length);
 
-        let hypo = 0;
-        this.cost = 0;
-        let x; let y;
-        let m; let c;
-        this.points.forEach( data => {
-            
-            x = data.val.x;
-            y = data.val.y;
-            m = reg_line.m;
-            c = reg_line.c
-            hypo = (m*x) + c
-            this.cost += Math.pow(hypo - y, 2)
+      this.draw_point(cnv, cost)
+  }
 
-        });
-
-
-
-    }
+  draw_point(cnv, cost){
+    let x = cnv.map(this.iter, 0, this.limit, cnv.width*0.09, cnv.width);
+    let y = cnv.map(cost, 0, 0.1, cnv.height, 0)
+    // console.log(cost);
+    cnv.stroke(255);
+    cnv.strokeWeight(cnv.width*0.009);
+    cnv.point(x, y);
+    
+  }
 
 
 }
+
