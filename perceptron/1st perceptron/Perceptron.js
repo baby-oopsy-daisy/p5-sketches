@@ -1,7 +1,7 @@
 class Perceptron{
 
     constructor(n){
-        
+        this.radius = 5;
         this.weight = []
         // INITIALIZE THE WEIGHTS RANDOMLY
         for(let i = 0; i< n; i++){
@@ -20,21 +20,29 @@ class Perceptron{
 
     train(inputs){ // [ [x,y,label] ....]
         let x,y,target;
-        let l_rate = 0.1;
+        let l_rate = 0.03;
         let gradient = new Array(this.weight.length).fill(0)
         
         let temp = 0
+        
         for(let i = 0; i< inputs.length; i++){
+            
             x = inputs[i][0];
             y = inputs[i][1];
             target = inputs[i][2];
             temp = (this.guess([x,y]) - target)
+
+           
+
+
             gradient[0] += (temp*x);
-            gradient[1] += (temp*y); 
+            gradient[1] += (temp*y);
+            
         }
         for (let i = 0; i< this.weight.length; i++){
             this.weight[i] -= ((gradient[i] * l_rate)/ inputs.length);
         }
+       
 
     }
     

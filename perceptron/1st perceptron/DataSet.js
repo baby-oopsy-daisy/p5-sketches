@@ -23,6 +23,7 @@ class DataSet{
             y = map(y, 0, 1, height, 0);
             if(target == 1){
                 stroke(255,255,0);
+                rectMode(CENTER);
                 rect(x,y,this.radius*2, this.radius*2);
             }
             else{

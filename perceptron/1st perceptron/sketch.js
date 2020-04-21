@@ -4,6 +4,7 @@ let timelimit = 10;
 let time = 0;
 let start;
 let flag = false;
+let info;
 function setup() {
 	createCanvas(500,500);
 	
@@ -11,8 +12,8 @@ function setup() {
 	p = new Perceptron(2);
 	start = createButton("START TRAINING");
 	let reset = createButton("RESET");
-	// let guess = p.guess(inputs);
-	// console.log(guess);
+	createP("LOSS");
+	info = createP("null")
 	start.mousePressed(() => {
 		flag = true
 	});
@@ -22,7 +23,7 @@ function setup() {
 	})
 }
 
-
+let loss;
 function draw() {
 	background(0);
 
@@ -42,15 +43,23 @@ function draw() {
 	line(0,height, width,0);
 	
 	if(flag){
-
+		error = 0;
 		if(time> timelimit){
 			time = 0;
 			p.train(training_set.dataSet);
 	
 		}
 		time++;
+		// LOG THE ERROR
+		training_set.dataSet.forEach((x) => {
+			error += Math.pow( p.guess([x[0], x[1]]) -  x[2] , 2)
+		})
+		error /= training_set.dataSet.length;
+		info.html(error);
 	}
 	
+	
+
 }
 
 
