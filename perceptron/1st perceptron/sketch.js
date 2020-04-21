@@ -1,15 +1,28 @@
 let p;
 let training_set;
+let timelimit = 10;
+let time = 0;
+let start;
+let flag = false;
 function setup() {
 	createCanvas(500,500);
 	
 	training_set = new DataSet(500);
 	p = new Perceptron(2);
+	start = createButton("START TRAINING");
+	let reset = createButton("RESET");
 	// let guess = p.guess(inputs);
 	// console.log(guess);
+	start.mousePressed(() => {
+		flag = true
+	});
+
+	reset.mousePressed(() => {
+		location.reload();
+	})
 }
 
-let error = 0;
+
 function draw() {
 	background(0);
 
@@ -27,13 +40,17 @@ function draw() {
 	stroke(255);
 	strokeWeight(2);
 	line(0,height, width,0);
-	// noLoop();
+	
+	if(flag){
+
+		if(time> timelimit){
+			time = 0;
+			p.train(training_set.dataSet);
+	
+		}
+		time++;
+	}
 	
 }
 
-function mousePressed(){
-	p.train(training_set.dataSet);
-	console.log(p.weight); 
-
-}
 
