@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>titanic</title>
+
+	<script src="libraries/p5.js"></script>
+	<script src="libraries/p5.dom.js"></script>
+	<script src="libraries/p5.sound.js"></script>
+	<script src="sketch.js"></script>
+	<!-- ADDING math LIBRARY -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/6.6.4/math.js"></script>
+	<!-- ADDING CHART LIBRARY -->
+	<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
+	<style>
+		body {
+			margin:0;
+			padding:0;
+			overflow: scroll;
+		}
+		canvas {
+			margin:auto;
+		}
+		#graph{
+			/* height: 40vh; */
+			width: 80vw;
+			display: inline-block;
+			margin: 10vw;
+			/* align-content: center; */
+			border: 2px solid black;
+			position: relative;
+
+		}
+		.Graph div{
+			border :2px solid red;
+			width: 500px;
+			height: 300px;
+			margin: 10%;
+			position: relative;
+		}
+		/* .Graph canvas{
+			margin: 20%;
+		} */
+
+	</style>
+</head>
+<body>
+	<div class = "Graph" id = "graph">
+		
+		<!-- AGE COUNT -->
+		<div class = "C" >
+			<canvas class = "chart" id = "ageCount" ></canvas>
+		</div>
+		
+		<!-- CLASS COUNT  -->
+		<div class = "C" >
+			<canvas class = "chart" id = "pClassCount"></canvas>
+		</div>
+		
+		<!-- SURVIVED v/s DIED -->
+		<div class = "C">
+			<canvas class = "chart" id = "survivalCount"></canvas>
+		</div>
+		
+		<!-- SURVIVED IN EACH CLASS -->
+		<div class = "C">
+			<canvas class = "chart" id = "survivalEachClass"></canvas>
+		</div>
+		
+		<!-- ON BOARD LOACTION -->
+		<div class = "C" >
+			<canvas class = "chart" id = "embarked"></canvas>	
+		</div>	
+
+	</div>
+</body>
+</html>
