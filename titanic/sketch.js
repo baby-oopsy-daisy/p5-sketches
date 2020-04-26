@@ -1,3 +1,21 @@
+// pclass: A proxy for socio-economic status (SES)
+// 1st = Upper
+// 2nd = Middle
+// 3rd = Lower
+
+// age: Age is fractional if less than 1. If the age is estimated, is it in the form of xx.5
+
+// sibsp: The dataset defines family relations in this way...
+// Sibling = brother, sister, stepbrother, stepsister
+// Spouse = husband, wife (mistresses and fiancés were ignored)
+
+// parch: The dataset defines family relations in this way...
+// Parent = mother, father
+// Child = daughter, son, stepdaughter, stepson
+// Some children travelled only with a nanny, therefore parch=0 for them.
+
+
+
 
 let column = new Map();
 
@@ -53,7 +71,8 @@ const AGE_COUNT = () => {
 				label: 'AGE COUNT',
 				backgroundColor: '#3e95cd',
 				
-				data: [...count.values()]
+				data: [...count.values()],
+
 			}]
 		},
 	
@@ -64,8 +83,25 @@ const AGE_COUNT = () => {
 			},
 			title:{
 				display: true,
-				text: 'COUNT OF DIFFERENT AGE GROUP'
-			}
+				text: 'COUNT OF DIFFERENT AGE GROUP',
+				fontSize: 24,
+				
+				
+			},
+			scales: {
+				yAxes: [{
+					ticks: {
+						fontSize: 24
+					}
+				}],
+				xAxes: [{
+					ticks: {
+						fontSize: 24
+					}
+				}]
+			},
+			
+
 		}	
 	}); 
 
@@ -115,13 +151,29 @@ const CLASS_COUNT = () => {
 		options: {
 			title: {
 				display: true,
-				text: 'PASSANGER COUNT FOR DIFFERENT CLASS'
+				text: 'PASSANGER COUNT FOR DIFFERENT CLASS',
+				fontSize: 24
 			},
 
 			legend: {
 				display: false,
+				
+			},
+			scales: {
+				yAxes: [{
+					ticks: {
+						fontSize: 24
+					}
+				}],
+				xAxes: [{
+					ticks: {
+						fontSize: 24
+					}
+				}]
 			}
-		}
+
+			}
+		
 	}); 
 
 
@@ -145,7 +197,7 @@ const SURVIVAL_COUNT = () =>{
 		data: {
 			labels: ["SURVIVED", "DIED"],
 			datasets: [{
-				label: 'AGE COUNT',
+				
 				backgroundColor: [ "#8e5ea2","#3cba9f"],
 				
 				data: [survived, died]
@@ -156,12 +208,24 @@ const SURVIVAL_COUNT = () =>{
 		options: {
 			legend:{
 				display: true,
+				labels: {
+						
+					fontSize: 15,
+					
+				},
+				position: "top"
+				
 			},
 			title:{
 				display: true,
-				text: 'SURVIVED v/s DIED'
-			}
-		}	
+				text: 'SURVIVED v/s DIED',
+				fontSize: 24,
+				
+				
+			},
+
+		}
+			
 	})
 
 }
@@ -231,16 +295,37 @@ const SURVIED_PER_CLASS = () =>{
 		options: {
 			legend:{
 				display: true,
+				labels: {
+						
+					fontSize: 15,
+					
+				},
+				position: "right"
+				
 			},
 			title:{
 				display: true,
-				text: 'SURVIVED / DIED IN EACH CLASS'
+				text: 'CLASS WISE SURVIVAL',
+				fontSize: 24,
+				
+			},
+			scales: {
+				yAxes: [{
+					ticks: {
+						fontSize: 24
+					}
+				}],
+				xAxes: [{
+					ticks: {
+						fontSize: 24
+					}
+				}]
 			}
 		}	
 	})
 }
 
-
+//LOCATION DAAT
 const ON_BOARD_DATA = () => {
 
 	let CLASS = column.get("Pclass")
@@ -287,7 +372,7 @@ const ON_BOARD_DATA = () => {
 	
 			// The data for our dataset
 			data: {
-				labels: ["Southampton", "Cherbourg", "Queenstown,"],
+				labels: ["Southampton", "Cherbourg", "Queenstown"],
 				datasets: [
 					{
 					label: "PASSANGER COUNT",
@@ -297,31 +382,31 @@ const ON_BOARD_DATA = () => {
 					},
 					{
 						label: 'SURVIVED',
-						backgroundColor: "#8e5ea2",
+						backgroundColor: "rgb(255,165,0)",
 						
 						data: [count.S.survival.survived, count.C.survival.survived, count.Q.survival.survived]
 					},
 					{
 						label: 'DIED',
-						backgroundColor: "#8e5ea2",//"#3cba9f"
+						backgroundColor: "#rgb(0,0,0)",//"#3cba9f"
 						
 						data: [count.S.survival.died, count.C.survival.died, count.Q.survival.died]
 					},
 					{
 						label: 'CLASS_1',
-						backgroundColor: "#3cba9f",
+						backgroundColor: "rgb(212,175,55)",
 						
 						data: [count.S.class[1], count.C.class[1], count.Q.class[1]]
 					},
 					{
 						label: 'CLASS_2',
-						backgroundColor: "#3cba9f",
+						backgroundColor: "#C0C0C0",
 						
 						data: [count.S.class[2], count.C.class[2], count.Q.class[2]]
 					},
 					{
 						label: 'CLASS_3',
-						backgroundColor: "#3ca9f",
+						backgroundColor: "rgb(205, 127, 50)",
 						
 						data: [count.S.class[3], count.C.class[3], count.Q.class[3]]
 					},
@@ -334,10 +419,32 @@ const ON_BOARD_DATA = () => {
 			options: {
 				legend:{
 					display: true,
+					labels: {
+						
+						fontSize: 15,
+						
+					},
+					position: "right"
+					
 				},
 				title:{
 					display: true,
-					text: 'LOCATION DATA'
+					text: 'LOCATION DATA',
+					fontSize: 24
+				},
+				scales: {
+					yAxes: [{
+						ticks: {
+							fontSize: 24
+						}
+					}],
+					xAxes: [{
+						ticks: {
+							fontSize: 24
+						}
+					}],
+					
+
 				}
 			}	
 
@@ -345,6 +452,13 @@ const ON_BOARD_DATA = () => {
 	})
 
 }
+
+
+
+
+
+
+
 
 
 

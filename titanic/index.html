@@ -22,58 +22,62 @@
 			padding:0;
 			overflow: scroll;
 		}
-		canvas {
-			margin:auto;
-		}
+
 		#graph{
-			/* height: 40vh; */
-			width: 80vw;
-			display: inline-block;
-			margin: 10vw;
-			/* align-content: center; */
-			border: 2px solid black;
-			position: relative;
+			
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: 10%;
+			width: 90vw;
+			border: 10px solid black;
+			overflow: hidden;
 
 		}
-		.Graph div{
-			border :2px solid red;
-			width: 500px;
-			height: 300px;
-			margin: 10%;
-			position: relative;
+
+		div{
+			/* display: block; */
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: 5%;
+			margin-bottom: 5%;
+			width: 40%;
+			border: 5px dotted black;
+			/* float: left; */
+			padding: 2%;
+			
 		}
-		/* .Graph canvas{
-			margin: 20%;
-		} */
+
+
 
 	</style>
 </head>
 <body>
-	<div class = "Graph" id = "graph">
+	<div  id = "graph"  align = "center" >
 		
 		<!-- AGE COUNT -->
-		<div class = "C" >
-			<canvas class = "chart" id = "ageCount" ></canvas>
+		<div ">
+			<canvas  id = "ageCount" ></canvas>
 		</div>
 		
 		<!-- CLASS COUNT  -->
-		<div class = "C" >
-			<canvas class = "chart" id = "pClassCount"></canvas>
+		<div>
+			<canvas  id = "pClassCount"></canvas>
 		</div>
 		
 		<!-- SURVIVED v/s DIED -->
-		<div class = "C">
-			<canvas class = "chart" id = "survivalCount"></canvas>
+		<div>
+			<canvas  id = "survivalCount"></canvas>
 		</div>
 		
 		<!-- SURVIVED IN EACH CLASS -->
-		<div class = "C">
-			<canvas class = "chart" id = "survivalEachClass"></canvas>
+		<div>
+			<canvas  id = "survivalEachClass"></canvas>
 		</div>
 		
 		<!-- ON BOARD LOACTION -->
-		<div class = "C" >
-			<canvas class = "chart" id = "embarked"></canvas>	
+		<div >
+			<canvas  id = "embarked"></canvas>	
 		</div>	
 
 	</div>
