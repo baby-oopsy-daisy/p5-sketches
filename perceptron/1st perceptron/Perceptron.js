@@ -20,7 +20,7 @@ class Perceptron{
 
     train(inputs){ // [ [x,y,label] ....]
         let x,y,target;
-        let l_rate = 0.03;
+        let l_rate = 0.05;
         let gradient = new Array(this.weight.length).fill(0)
         
         let temp = 0
@@ -37,10 +37,12 @@ class Perceptron{
 
             gradient[0] += (temp*x);
             gradient[1] += (temp*y);
-            
+          
+        
         }
         for (let i = 0; i< this.weight.length; i++){
             this.weight[i] -= ((gradient[i] * l_rate)/ inputs.length);
+        
         }
        
 

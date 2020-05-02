@@ -23,29 +23,36 @@
 			overflow: scroll;
 		}
 
-		#graph{
+		.conatiner{
 			
-			display: block;
+			/* display: block;
 			margin-left: auto;
-			margin-right: auto;
-			margin-top: 10%;
+			margin-right: auto; */
+			text-align: center;
+			margin: 10% auto;
 			width: 90vw;
 			border: 10px solid black;
-			overflow: hidden;
+			
 
 		}
 
-		div{
+		.graph{
 			/* display: block; */
-			margin-left: auto;
-			margin-right: auto;
-			margin-top: 5%;
-			margin-bottom: 5%;
+			/* margin-left: auto;
+			margin-right: auto; */
+			/* margin-top: 5%;
+			margin-bottom: 5%; */
 			width: 40%;
 			border: 5px dotted black;
 			/* float: left; */
-			padding: 2%;
+			/* padding: 2%; */
+			display: inline-block;
+			margin: 0 auto;
 			
+		}
+		.graph > canvas{
+			margin: 0 auto;
+			/* display: inline-block; */
 		}
 
 
@@ -53,30 +60,30 @@
 	</style>
 </head>
 <body>
-	<div  id = "graph"  align = "center" >
+	<div  class = "conatiner"  align = "center" >
 		
 		<!-- AGE COUNT -->
-		<div ">
+		<div class = "graph">
 			<canvas  id = "ageCount" ></canvas>
-		</div>
+		</div >
 		
 		<!-- CLASS COUNT  -->
-		<div>
+		<div class = "graph">
 			<canvas  id = "pClassCount"></canvas>
 		</div>
 		
 		<!-- SURVIVED v/s DIED -->
-		<div>
+		<div class = "graph">
 			<canvas  id = "survivalCount"></canvas>
 		</div>
 		
 		<!-- SURVIVED IN EACH CLASS -->
-		<div>
+		<div class = "graph">
 			<canvas  id = "survivalEachClass"></canvas>
 		</div>
 		
 		<!-- ON BOARD LOACTION -->
-		<div >
+		<div class = "graph">
 			<canvas  id = "embarked"></canvas>	
 		</div>	
 

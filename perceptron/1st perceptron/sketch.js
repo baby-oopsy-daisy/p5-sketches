@@ -47,15 +47,20 @@ function draw() {
 		if(time> timelimit){
 			time = 0;
 			p.train(training_set.dataSet);
+			training_set.dataSet.forEach((x) => {
+				error += Math.pow( p.guess([x[0], x[1]]) -  x[2] , 2)
+			})
+			error /= training_set.dataSet.length;
+			info.html(error);
 	
 		}
 		time++;
 		// LOG THE ERROR
-		training_set.dataSet.forEach((x) => {
-			error += Math.pow( p.guess([x[0], x[1]]) -  x[2] , 2)
-		})
-		error /= training_set.dataSet.length;
-		info.html(error);
+		// training_set.dataSet.forEach((x) => {
+		// 	error += Math.pow( p.guess([x[0], x[1]]) -  x[2] , 2)
+		// })
+		// error /= training_set.dataSet.length;
+		// info.html(error);
 	}
 	
 	
