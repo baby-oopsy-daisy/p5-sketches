@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>first</title>
+
+	<script src="libraries/p5.js"></script>
+	<script src="libraries/p5.dom.js"></script>
+	<script src="libraries/p5.sound.js"></script>
+	<script src="sketch.js"></script>
+	<script src="https://d3js.org/d3.v5.js"></script>
+	<style>
+		body {
+			margin:0;
+			padding:0;
+			overflow: scroll;
+		}
+		canvas {
+			margin:auto;
+		}
+	</style>
+</head>
+<body>
+	<div style="text-align: center;">
+		<div style="display: inline-block; margin: 0 auto;">
+			<h1>BAR CHART</h1><br>
+	<!-- <h1 id = "head">This is a test file</h1> -->
+	<div class="canvas">
+		
+	</div>
+	<div>
+		<br>
+		<textarea id = "data" type="text">ENTER DATA AS SPACE SEPERATED NUMBERS
+		</textarea>
+		<button id = "button">submit</button>
+	</div>
+	<h2>OR</h2>
+	<div>
+		<p><b>Generate a random data set of the specified length</b></p>
+		<lable for = "num"> LENGTH OF DATA SET(max 60): </lable><br>
+		<input id = "random_data" type = "number" name = "num" value = 3 max="60"></input>
+		<button id = "random_set_button">GENERATE</button>
+	</div>
+	<br>
+	<button id = "refresh" style="background-color: black; color: white;">RSEST</button>
+		</div>
+	</div>
+
+</body>
+</html>
