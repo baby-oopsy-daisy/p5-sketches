@@ -38,7 +38,7 @@ const graph = main.append("g").attr("class", "graph")
 
 //GETTING THE DATA
 let max = 20;
-let size = 10;
+let size = 13;
 let data = generateData(max,size)
 
 console.log(data);
@@ -145,10 +145,11 @@ const calcNormalDist = (data) => {//CALCULATE THE NORMAL DIST AND RETURN NEW ARR
 
 
 const generateData = (n, size) => {//GENERATES THE DATA SET
-    size = max(10,size)
-    let mid = floor(size/2);
+    size = min(max(10,size),25)
+    
+    let mid = floor(size * random(0.2,0.9));
     let arr1= new Array(mid).fill(0).map( d => floor( random(0.02, 0.95)* n)).sort((a,b) => a-b)
-    let arr2= new Array(mid).fill(0).map( d => floor( random(0.02, 0.95)* n)).sort((a,b) => b-a)
+    let arr2= new Array(size-mid).fill(0).map( d => floor( random(0.02, 0.95)* n)).sort((a,b) => b-a)
     
     return [...arr1, n , ...arr2];
     
