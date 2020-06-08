@@ -1,0 +1,12 @@
+[
+    {"height" : 20, "fill": "red"},
+    {"height" : 10, "fill": "blue"},
+    {"height" : 90, "fill": "maroon"},
+    {"height" : 110, "fill": "aqua"},
+    {"height" : 50, "fill": "pink"},
+    {"height" : 20, "fill": "orange"},
+    {"height" : 200, "fill": "green"},
+    {"height" : 90, "fill": "lightgreen"},
+    {"height" : 100, "fill": "black"},
+    {"height" : 56, "fill": "violet"}
+]
