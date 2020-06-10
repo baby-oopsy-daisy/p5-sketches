@@ -15,7 +15,7 @@ const container = body.append("div").attr("class", "container");
 
 //APPEND SVG TO DIV
 let svg = []
-for(let i = 0; i<28; i++){
+for(let i = 0; i<18; i++){
     let temp = container.append("svg").attr("class",`main svg${i}`)
    .attr("width", svgwidth)
    .attr("height", svgheight);
@@ -25,7 +25,9 @@ for(let i = 0; i<28; i++){
 container.append("div").attr("class","info")
 .style("width", "90%")
 .style("height", "90%")
-.text("DATA VIZUALIZATION: THE ART OF VIZUALIZING DATA");
+.text("DATA VIZUALIZATION")
+.append("text")
+.text("VISUAL LINK BETWEEN YOU AND DATA");
 
 
 let graph;

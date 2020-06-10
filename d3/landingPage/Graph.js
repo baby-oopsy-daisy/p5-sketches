@@ -39,11 +39,15 @@ class Graph{
         
         let rect = graph.selectAll("rect").data(this.data);
         rect.enter().append("rect").attr("class", "bar")
-                .attr("height", d => graphheight - Y(d.height))
                 .attr("width", X.bandwidth())
                 .attr("x", (d,i) => X(i))
+                .attr("fill", (d,i) => "#69b6a1")
+                .transition()
+                .duration((d,i) => (i+2)*500)
                 .attr("y", d => Y(d.height))
-                .attr("fill", (d,i) => "#69b6a1");
+                .attr("height", d => graphheight - Y(d.height))
+        
+                
         let Xaxis = d3.axisBottom(X)
                         .tickValues(0);
         let Yaxis = d3.axisLeft(Y)
@@ -55,6 +59,7 @@ class Graph{
                 .call(Yaxis);
     
     }
+
     lineGraph(svg, index){
 
         // USEFUL VARIABLES
@@ -91,20 +96,26 @@ class Graph{
                         .attr("width", graphwidth)
                         .attr("transform", `translate( ${margin.left}, ${margin.top})`);
                     
-        
         const path = graph.append("path")
-                            .attr("d", lineGen(this.data))
-                            .attr("stroke", "white")
-                            .attr("fill", "none")
-                            .style("stroke-Width", "0.9%");
-                        
+            .attr("d", lineGen(this.data))
+            .attr("fill", "none")
+            .attr("stroke", "none")
+            .style("stroke-Width", "0.9%")
+            .transition()
+            .duration(10000)
+            .attr("stroke", "white")
+
         const dataPoints = graph.selectAll("circle").data(this.data);
         dataPoints.enter()
                 .append("circle")
+                .attr("r", "1%")
+                .attr("fill", "black")
+                .transition()
+                .duration((d,i) => (i+1)*500)
                 .attr("cx", (D,i) => X(i))
                 .attr("cy", d => Y(d.height))
-                .attr("r", "1%")
-                .attr("fill", "black");
+        
+
 
         let Xaxis = d3.axisBottom(X)
                     .tickValues(0);
@@ -160,8 +171,13 @@ class Graph{
                             .attr("d", areaGen(this.data))
                             .attr("stroke", "white")
                             .attr("fill", "orange")
+                            .attr("fill-opacity", 0)
+                            .style("stroke-Width", "0.4%")
+                            .transition()
+                            .duration(3000)
+                            .ease(d3.easeLinear)
                             .attr("fill-opacity", 0.6)
-                            .style("stroke-Width", "0.4%");
+                            
                         
         
 
@@ -177,6 +193,58 @@ class Graph{
     }
 
     pieGraph(svg, index){
-        
+            
+            // USEFUL VARIABLES
+            const svgwidth = Number(svg.style("width").split("p")[0]);
+            const svgheight = Number(svg.style("height").split("p")[0])
+            const margin = {
+                top: (svgheight * 0.15),
+                right: (svgwidth * 0.15),
+                bottom: (svgheight * 0.15),
+                left: (svgwidth * 0.15)
+            }
+            const graphheight = svgheight - (margin.top + margin.bottom);
+            const graphwidth = svgwidth - (margin.right + margin.left);
+            //COLOR GENERATOR
+            const colorGen = d3.scaleOrdinal()
+                                .domain([0, this.data.length-1])
+                                .range(d3.schemeAccent);    
+
+            //PIE GENERATOR -> GENERATES THE ANGLES
+            const pieGen = d3.pie()
+                                .sort(null)
+                                .value(d => d.height)
+                                .padAngle(0.09);
+
+                            
+           const angles = pieGen(this.data);
+           //ARC GENERATOR
+           const arcGen = d3.arc()
+                            .innerRadius(graphheight/4)
+                            .outerRadius(graphheight/2);
+
+           
+           
+            
+            let graph = svg.append("g").attr("class", `graph graph${index}`)
+                            .attr("height", graphheight)
+                            .attr("width", graphwidth)
+                            .attr("transform", `translate( ${svgwidth/2}, ${svgheight/2})`);
+                        
+            
+            const path = graph.selectAll("path").data(angles);
+            path.enter().append("path")
+                                .attr("d", d => arcGen(d))
+                                .attr("stroke", "black")
+                                .attr("stroke-width", 0)
+                                .attr("fill", (d,i) => colorGen(i))
+                                .attr("fill-opacity", 0)
+                                .transition()
+                                .duration((d,i) => (i+1) *700)
+                                .attr("fill-opacity", 1)
+                                .attr("stroke-width", 1)
+                                
+                                
+                                
     }
 }
