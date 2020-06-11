@@ -27,7 +27,8 @@ container.append("div").attr("class","info")
 .style("height", "90%")
 .text("DATA VIZUALIZATION")
 .append("text")
-.text("VISUAL LINK BETWEEN YOU AND DATA");
+.text("A VISUAL LINK BETWEEN YOU AND DATA")
+
 
 
 let graph;
@@ -48,6 +49,8 @@ fetch("text.json")
         graph.areaGraph(svg[2], 2)
             
         graph.pieGraph(svg[3], 3)
+
+        graph.lolipopGraph(svg[4], 4)
         
     })
 }

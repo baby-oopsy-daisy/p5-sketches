@@ -42,6 +42,7 @@ class Graph{
                 .attr("width", X.bandwidth())
                 .attr("x", (d,i) => X(i))
                 .attr("fill", (d,i) => "#69b6a1")
+                .attr("y", graphheight)
                 .transition()
                 .duration((d,i) => (i+2)*500)
                 .attr("y", d => Y(d.height))
@@ -110,9 +111,10 @@ class Graph{
                 .append("circle")
                 .attr("r", "1%")
                 .attr("fill", "black")
+                .attr("cx", (d,i) => i%2!=0?graphwidth:0)
                 .transition()
                 .duration((d,i) => (i+1)*500)
-                .attr("cx", (D,i) => X(i))
+                .attr("cx", (d,i) => X(i))
                 .attr("cy", d => Y(d.height))
         
 
@@ -246,5 +248,85 @@ class Graph{
                                 
                                 
                                 
+    }
+
+    lolipopGraph(svg, index){
+        // USEFUL VARIABLES
+        const data = this.data.map(d =>{
+            let temp = {height: d.height};
+            return temp  
+        }).sort((a,b) => a.height - b.height)
+
+        
+        const svgwidth = Number(svg.style("width").split("p")[0]);
+        const svgheight = Number(svg.style("height").split("p")[0])
+        const margin = {
+            top: (svgheight * 0.15),
+            right: (svgwidth * 0.09),
+            bottom: (svgheight * 0.12),
+            left: (svgwidth * 0.15)
+        }
+        const graphheight = svgheight - (margin.top + margin.bottom);
+        const graphwidth = svgwidth - (margin.right + margin.left);
+        
+        //DEFINING SCALES
+        //X SCALE
+        const Y = d3.scaleBand()
+                    .range([graphheight, 0])
+                    .domain(data.map((d,i) => i))
+                    .padding(0.1)
+                    .paddingOuter(1)
+        //Y SCALE
+        const X = d3.scaleLinear()
+                    .range([0, graphwidth])
+                    .domain([0, d3.max(data, d=>d.height)]);
+        
+                
+
+        
+        let graph = svg.append("g").attr("class", `graph graph${index}`)
+                        .attr("height", graphheight)
+                        .attr("width", graphwidth)
+                        .attr("transform", `translate( ${margin.left}, ${margin.top})`);
+        
+        let line = graph.selectAll("line").data(data);
+        line.enter().append("line").attr("class", "line")
+                    .attr("x1", 0)
+                    .attr("y1", (d,i) => Y(i))
+                    .attr("x2", 0)
+                    .attr("y2", (d,i) => Y(i))
+                    .attr("stroke", "red")
+                    .attr("stroke-width", "1%")
+                    .transition()
+                    .duration((d,i) => (i+2)*500)
+                    .attr("x2", (d, i) => X(d.height))
+
+    
+    
+    const dataPoints = graph.selectAll("circle").data(data);
+    dataPoints.enter()
+            .append("circle")
+            .attr("r", "1.2%")
+            .attr("fill", "green")
+            .attr("cy", graphheight)
+            .attr("cx", 0)
+            .transition()
+            .duration((d,i) => (i+1)*500)
+            .attr("cx", (d,i) => X(d.height))
+            .attr("cy", (d,i) => Y(i))
+
+
+                
+                
+                
+        let Xaxis = d3.axisBottom(X)
+                    .ticks(0);
+        let Yaxis = d3.axisLeft(Y)
+                        .tickValues(0)
+        graph.append("g")
+                .call(Xaxis)
+                .attr("transform", `translate(0, ${graphheight})`);
+        graph.append("g")
+                .call(Yaxis);
     }
 }

@@ -1,6 +1,7 @@
 *{
     box-sizing: border-box;
     
+    
 }
 body{
     background-color: rgb(206, 205, 205);
@@ -57,4 +58,8 @@ body{
 .svg3{
     grid-row: 1/ span 2;
     grid-column: -3/span 2;
+}
+.svg4{
+    grid-row: 4/span 2;
+    grid-column: 1/ span 2;
 }
