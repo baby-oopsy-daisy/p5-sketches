@@ -1,0 +1,17 @@
+*{
+    box-sizing: border-box;
+
+}
+body{
+    background-color: rgb(189, 186, 183);
+}
+.container{
+    margin-left: 5vw;
+    margin-top: 5vh;
+}
+.canva{
+    border-radius: 50px;
+    background-color: rgb(189, 186, 183);
+    box-shadow: 5px 5px 15px black, -5px -5px 15px white;
+    
+}
