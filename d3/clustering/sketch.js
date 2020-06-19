@@ -1,160 +1,159 @@
 function setup(){
-    /* YOUR CODE GOES HERE */
-    noCanvas();
+/* YOUR CODE GOES HERE */
+noCanvas();
 
-    //USEFUL VARIABLES
-    const svgwidth = 1200;
-    const svgheight = 1200;
-    const margin = {
-        top : (svgheight * 0.15),
-        right : (svgwidth * 0.15),
-        bottom : (svgheight * 0.15),
-        left : (svgwidth * 0.15),
-    }
-    const graphwidth = svgwidth - (margin.left + margin.right);
-    const graphheight = svgheight - (margin.top + margin.bottom);
-
-    //SELECTING THE BODY TAG
-    const body = d3.select("body");
-
-    //APPENDING DIV TO BODY
-    const container = body.append("div").classed("container", true);
-
-    //APPENDING SVG TO DIV
-    const svg = container.append("svg").classed("canva", true)
-                    .attr("width", svgwidth)
-                    .attr("height", svgheight);
-
-    //APPENDING GROUP FOR GRAPH TO SVG
-    const graph = svg.append("g").classed("graph", true)
-                        .attr("width", graphwidth)
-                        .attr("height", graphheight)
-                        .attr("transform", `translate( ${margin.left}, ${margin.top})`);
-
-    //SCALES
-    //X-SCALE
-    const X = d3.scaleLinear()
-                    .domain([0,10])
-                    .range([0,graphwidth]);
-    //Y-SCALE
-    const Y = d3.scaleLinear()
-                    .domain([0,10])
-                    .range([graphheight, 0]);
-    //COLOR GENERATOR
-    const colorGen = d3.scaleOrdinal()
-                        .domain([0,1,2,3,4,5,6,7])
-                        .range(d3.schemeCategory10)
-
-    //CREATING DATA SET
-    const data_items_count = 500; // NO OF DATA POINTS
-
-    let data = [];
-    for(let i =0; i< data_items_count; i++){
-
-
-
-        let x = (Math.random()*10)
-        let y = (Math.random()*10)
-        data.push({
-            x : (X(x)),
-            y : (Y(y)),
-            xVal: x,
-            yVal: y,
-            cluster: null
-        })
-    }
-    /*DATA FORMAT
-    {
-        x: Location
-        y: Location
-        xVal: X VALUE IN [0,1]
-        yVal: Y VALUE IN [0,1]
-    }*/
-
-
-    //ADDING DATA POINTS
-    const data_points = graph.selectAll("circle").data(data)
-    data_points.enter().append("circle").classed("data-points", true)
-    .attr("cx", d => d.x)
-    .attr("cy", d => d.y)
-    .attr("r", "10px")
-    .attr("stroke", "black")
-    // .attr("fill", "rgb(23, 50, 202)")
-    .attr("fill-opacity", 0.8);
-
-    const no_of_cluster = 10;// NO OF CLUSTERS TO FIND
-
-    let cluster = []
-    for(let i = 0; i< no_of_cluster; i++){
-        let index = Math.floor(Math.random()*data.length)
-        cluster.push({ 
-            // data: data[index],
-            data: {
-                xVal: (Math.random()*Math.random()*10),
-                yVal: (Math.random()*Math.random()*10)
-            },
-
-            color: colorGen(i),
-            list : []
-        })
-    }
- let count = 0;   
- const MaxIter = 100;
- const ID = setInterval(() => {
-
-        console.log("called");
-        if(count++ == MaxIter){clearInterval(ID)}
-        
-
-        // for(let i = 0; i< MaxIter; i++){
-            UpdateCluster(data, cluster);
-            d3.selectAll(".data-points").attr("fill", d=> cluster[d.cluster].color)
-            clusterMean(data, cluster);
-        // }
- },1000)
-
+//USEFUL VARIABLES
+const svgwidth = 800;
+const svgheight = 800;
+const margin = {
+    top: (svgheight * 0.15),
+    right: (svgwidth * 0.15),
+    bottom: (svgheight * 0.15),
+    left: (svgwidth * 0.15),
 }
+const graphwidth = svgwidth - (margin.right + margin.left)
+const graphheight = svgheight - (margin.top + margin.bottom)
 
+//SELECTING THE BODY
+const body = d3.select("body")
+//APPENDING DIV TO BODY
+const container = body.append("div").classed("container", true)
+//APPENDING SVG TO DIV
+const svg = container.append("svg").classed("svg", true)
+                            .attr("width", svgwidth)
+                            .attr("height", svgheight)
+//APPENDING GROUP TO SVG
+const graph = svg.append("g").classed("graph", true)
+                    .attr("width", graphwidth)
+                    .attr("height", graphheight)
+                    .attr("transform", `translate( ${margin.left}, ${margin.top})`)
+//DEFINING SCALES
+const X = d3.scaleLinear() // X SCALE
+            .range([0, graphwidth])
+const Y = d3.scaleLinear() // Y SCALE
+            .range([graphheight, 0])
+const colorGen = d3.scaleSequential()// COLOR GENERATOR
+                    .interpolator(d3.interpolateInferno)
 
-
-
-
-
-
-
-
-
-const UpdateCluster = (data, cluster) => {
-
-    const EucleidanDistance = (i,j) => {
-        return Math.sqrt(  (data[i].xVal - cluster[j].data.xVal)**2  + (data[i].yVal - cluster[j].data.yVal)**2)
-    }
-
-    for(let i = 0; i< cluster.length; i++){
-        cluster[i].list = [];
-    }
-    for(let i = 0; i< data.length; i++){
+      
+d3.csv("data.csv")
+    .then(response => response)
+    .then(data => {
         
-        let temp = [];
-        for(let j = 0; j< cluster.length; j++){
-                temp.push(EucleidanDistance(i, j))
+        data = data.map(d => {
+            return {
+                x: Number(d.Age),
+                y: Number(d["Annual Income (k$)"]),
+                location: {
+                    x:0,
+                    y:0
+                },
+                cluster : null,
             }
-        let c =  temp.indexOf(d3.min(temp));   
+        })
+        
+        
+        
+        
+        //SETTING THE DOMAINS FOR SCALES
+        X.domain([10, d3.extent(data, d=>d.x)[1]])
+        Y.domain([10, d3.extent(data, d=>d.y)[1]])
+        colorGen.domain([0, data.length])
+        
+        const data_points = graph.selectAll(".data_points").data(data)
+        data_points.enter().append("circle").classed("data_points", true)
+                    .attr("cx", 0)
+                    .attr("cy", graphheight)
+                    .attr("r", "1%")
+                    .attr("fill-opacity", 0.6)
+                    .style("fill", (d,i) => colorGen(i))
+                    .attr("stroke", "black")
+                    .transition()
+                    .delay(1000)
+                    .duration((d,i)=> ((i)%10+1) * 500)
+                    .attr("cx", d => X(d.x))
+                    .attr("cy", d => Y(d.y))
+
+        //ADDING AXIS
+        const xaxis = graph.append("g").call(d3.axisBottom(X))
+                            .attr("transform", `translate(0, ${graphheight})`)
+        const yaxis = graph.append("g").call(d3.axisLeft(Y))                            
+        
+        // INITIALIZING CLUSTERS
+        const cluster_count = 5;
+        colorGen.domain([0, cluster_count]) // SETTING THE COLOR RANGE
+        
+        let clusters = [];
+        for(let i =0 ;i< cluster_count; i++){
+            let index = Math.floor(Math.random() * data.length)
+            clusters.push({
+                x: Math.random()* d3.max(data, d=>d.x),
+                y: Math.random()*d3.max(data, d=>d.y),
+                // x: data[index].x,
+                // y: data[index].y,
+                color: colorGen(i),
+                items: null
+            })
+        }
+        
+        let maxIter = 30;
+        let count = 0;
+        setTimeout( () => {let ID = setInterval(() => {
+        console.log("called");
+        
+        if(count++ == maxIter){clearInterval(ID)} //TERMINATE AFTER SOME ITERATIONS
+
+        updateClustersOfData(data, clusters);
             
-        data[i].cluster =  c
-        cluster[c].list.push(data[i])
-    }
-    
+        updateColor(clusters);
+
+        findNewClustersPoints(clusters);
+
+        }, 1000)}, 5400)
+
+    })
 }
 
-const clusterMean = (data, cluster) => {
-    // console.log(cluster);
-    
-     for(let i = 0; i < cluster.length; i++){
-         let curr = cluster[i].list;
-         cluster[i].data.xVal = d3.mean(curr, d => d.xVal)
-         cluster[i].data.yVal = d3.mean(curr, d => d.yVal)
-     }
-    // console.log(cluster);
 
+const updateClustersOfData = (data, clusters) => {
+
+    //EMPTY THE CLUSTER LIST
+    clusters.forEach(d => {
+        d.items = [];
+    })
+    
+    
+    
+    //UPDATE CLUSTERS OF DATA AND ADD THEM TO THE ITEMS OF CLUSTERS
+    data.forEach(d => {
+        let temp = []
+        for(let i = 0; i< clusters.length; i++){
+            
+            temp.push( Math.sqrt( (d.x - clusters[i].x)**2 + (d.y - clusters[i].y)**2 ) )
+        }
+        let cluster = d3.min(temp);
+        
+         d.cluster = temp.indexOf(cluster);
+        clusters[temp.indexOf(cluster)].items.push(d);
+    })
+
+
+}
+
+const updateColor = (clusters) => {
+    d3.selectAll(".data_points")
+        .transition()
+        .duration(1000)
+        .style("fill", d => clusters[d.cluster].color)
+        
+}
+
+const findNewClustersPoints = (clusters) => {
+
+    for(let i = 0;i < clusters.length; i++){
+        let Xmean = d3.mean(clusters[i].items, d=> d.x)
+        let Ymean = d3.mean(clusters[i].items, d=> d.y)
+        clusters[i].x = Xmean
+        clusters[i].y = Ymean
+    }
 }

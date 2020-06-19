@@ -1,17 +1,12 @@
 *{
     box-sizing: border-box;
+    background-color: rgb(196, 198, 211);
+}
 
-}
-body{
-    background-color: rgb(189, 186, 183);
-}
-.container{
-    margin-left: 5vw;
-    margin-top: 5vh;
-}
-.canva{
+.svg{
+    margin-left: 10vw;
+    margin-top: 10vh;
     border-radius: 50px;
-    background-color: rgb(189, 186, 183);
-    box-shadow: 5px 5px 15px black, -5px -5px 15px white;
-    
+    box-shadow: 5px 5px 25px inset rgb(39, 38, 38), -2px -2px 25px inset rgb(238, 238, 238);
 }
+
