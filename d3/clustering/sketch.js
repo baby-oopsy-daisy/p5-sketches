@@ -31,19 +31,19 @@ const graph = svg.append("g").classed("graph", true)
 const X = d3.scaleLinear() // X SCALE
             .range([0, graphwidth])
 const Y = d3.scaleLinear() // Y SCALE
-            .range([graphheight, 0])
+            .range([0, graphheight])
 const colorGen = d3.scaleSequential()// COLOR GENERATOR
                     .interpolator(d3.interpolateInferno)
 
       
-d3.csv("data.csv")
+d3.csv("data3.csv")
     .then(response => response)
     .then(data => {
         
         data = data.map(d => {
             return {
-                x: Number(d.Age),
-                y: Number(d["Annual Income (k$)"]),
+                x: Number(d.X),
+                y: Number(d.Y),
                 location: {
                     x:0,
                     y:0
@@ -56,8 +56,8 @@ d3.csv("data.csv")
         
         
         //SETTING THE DOMAINS FOR SCALES
-        X.domain([10, d3.extent(data, d=>d.x)[1]])
-        Y.domain([10, d3.extent(data, d=>d.y)[1]])
+        X.domain(d3.extent(data, d=>d.x))
+        Y.domain(d3.extent(data, d=>d.y))
         colorGen.domain([0, data.length])
         
         const data_points = graph.selectAll(".data_points").data(data)
@@ -75,28 +75,69 @@ d3.csv("data.csv")
                     .attr("cy", d => Y(d.y))
 
         //ADDING AXIS
-        const xaxis = graph.append("g").call(d3.axisBottom(X))
+        const xaxis = graph.append("g").call(d3.axisBottom(X).ticks(4))
                             .attr("transform", `translate(0, ${graphheight})`)
-        const yaxis = graph.append("g").call(d3.axisLeft(Y))                            
+        const yaxis = graph.append("g").call(d3.axisLeft(Y).ticks(4))                            
         
         // INITIALIZING CLUSTERS
-        const cluster_count = 5;
-        colorGen.domain([0, cluster_count]) // SETTING THE COLOR RANGE
-        
+        const cluster_count = 7;
+        const clusterColorGen = d3.scaleOrdinal()
+                                    .range(d3.schemeCategory10) // SETTING THE COLOR RANGE
+                                    .domain(new Array(cluster_count), (d,i) => i)
         let clusters = [];
         for(let i =0 ;i< cluster_count; i++){
             let index = Math.floor(Math.random() * data.length)
             clusters.push({
-                x: Math.random()* d3.max(data, d=>d.x),
-                y: Math.random()*d3.max(data, d=>d.y),
+                x: Math.random() * d3.min(data, d=>d.x),
+                y: Math.random() * d3.max(data, d=>d.y),
                 // x: data[index].x,
                 // y: data[index].y,
-                color: colorGen(i),
+                color: clusterColorGen(i),
                 items: null
             })
         }
+
+        //SCALE FOR LEGEND
+        const ylegend = d3.scaleBand()
+                            .range([0, 100])
+                            .domain(clusters.map((d, i) => i ))
+                            .padding(0.3)
+                            .paddingOuter(1)
         
-        let maxIter = 30;
+        setTimeout(() => {
+                    //ADDING LEGENDS
+                    const legend  = svg.append("g").classed("legend", true)
+                    .attr("width", 100)
+                    .attr("transform", `translate(${svgwidth-150}, ${50})`)
+                    
+
+                    
+                    legend.append("text")
+                    .style("font-size", "0px")
+                    .text("CLUSTERS")
+                    .transition()
+                    .duration(1000)
+                    .style("font-size", "20px")
+                    
+
+                    legend.selectAll("rect")
+                    .data(clusters)
+                    .enter()
+                    .append("rect").classed("legend_items", true)
+                    .attr("width", 100)
+                    .attr("x", 0)
+                    .attr("y", (d,i) => ylegend(i))
+                    .style("fill-opacity", "0")
+                    .transition()
+                    .duration(1000)
+                    .style("fill-opacity", 1)
+                    .style("fill", d => d.color)
+                    .attr("height", ylegend.bandwidth())
+
+                    
+        }, 5400)
+        
+        let maxIter = 100;
         let count = 0;
         setTimeout( () => {let ID = setInterval(() => {
         console.log("called");
@@ -112,6 +153,8 @@ d3.csv("data.csv")
         }, 1000)}, 5400)
 
     })
+
+
 }
 
 
@@ -143,7 +186,7 @@ const updateClustersOfData = (data, clusters) => {
 const updateColor = (clusters) => {
     d3.selectAll(".data_points")
         .transition()
-        .duration(1000)
+        .duration(2000)
         .style("fill", d => clusters[d.cluster].color)
         
 }
