@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+
+<script src='https://d3js.org/d3.v5.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.js'></script>
+<link rel='stylesheet' href='style.css'>
+<script src="sketch.js"></script>
+<script src="cluster.js"></script>
+
+<title>html-online</title>
+</head>
+<body>
+    <div>
+        <h1 style="text-align: center; font-size: 3rem;"><u>CLUSTERING</u></h1>
+    </div>
+    <div class="container">
+        <div class="canvas_area">
+            
+        </div>
+        <div class="data_button_area data_button_container">
+            <button class="button data_button" id="data1" >DATA 1</button>
+            <button class="button data_button" id="data2">DATA 2</button>
+            <button class="button data_button" id="data3">DATA 3</button>
+        </div>
+        <div class="cluster_button_area">
+            <button class="button cluster_button">BEGIN CLUSTERING</button>
+            
+            <div class="info">
+                <text>Iteration : <span id="iteration">0</span></text>
+                <br>
+                <br>
+                <text id="readyornot">Ready to begin</text>
+                <br>
+                <br>
+                <button class="button" id="stopbutton">stop clustering</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+
+    </script>
+</body>
+</html>
