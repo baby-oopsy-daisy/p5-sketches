@@ -1,0 +1,23 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding: 0;
+    background-color: antiquewhite;
+}
+.container{
+    margin-left: 10vw;
+    margin-top: 10vh;
+}
+.svg{
+  
+    background-color: antiquewhite;
+    border-radius: 50px;
+    box-shadow: 3px 3px 10px inset black, -3px -3px 10px inset white;
+}
+.data-points{
+    stroke: black;
+    stroke-width: 0.05vw;
+    fill-opacity: 0.5;
+}
