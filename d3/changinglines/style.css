@@ -1,0 +1,65 @@
+*{
+    box-shadow: border-box;
+  }
+  body{
+    margin: 0;
+    padding: 0;
+    background-color: rgba(224, 170, 118, 0.822);
+  }
+  div{
+    width: 600px;
+    height: 600px;
+    margin: auto;
+    margin-top: 20px;
+  }
+  
+  .svg{
+    background: rgba(228, 235, 170, 0.774);
+    border-radius: 30px;
+    box-shadow: 3px 3px 10px inset black, -3px -3px 10px inset white
+  }
+  .data1-line{
+    stroke-width: 0.5vh;
+    stroke: teal;
+    opacity: 0.5;
+  }
+  .data1-data-points{
+      fill: teal;
+      opacity: 0.7;
+  }
+  .data2-line{
+    stroke-width: 0.5vh;
+    stroke: purple;
+    opacity: 0.5;
+  }
+  .data2-data-points{
+      fill: purple;
+      opacity: 0.7;
+  }
+  .border{
+    stroke: black;
+  /*   stroke-width: 10px; */
+  }
+  .dash{
+    stroke: red;
+    stroke-dasharray: 5;
+  }
+  .graph{
+      pointer-events: all;
+  }
+  .svg{
+      pointer-events: none;
+  }
+
+
+
+  button{
+    border: none;
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px inset black, -3px -3px 10px inset white,
+    0px 0px 5px  rgb(69, 212, 112);
+    position: absolute;
+    margin-left: 10px;
+    margin-top: 100px;
+    padding: 20px;
+  }
