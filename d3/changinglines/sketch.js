@@ -76,7 +76,7 @@ const Y = d3.scaleLinear()
 //AXIS
 graph.append("g").attr("id", "xaxis")
   .attr("transform", `translate(0, ${graphheight})`)
-  .call(d3.axisBottom(X).ticks(20))
+  .call(d3.axisBottom(X).ticks(20).tickFormat((d,i) => String.fromCharCode(i+64)))
 
 graph.append("g").attr("id", "yaxis")
 .call(d3.axisLeft(Y).ticks(6).tickFormat(d => d+"k").tickSizeOuter(0))
@@ -115,14 +115,15 @@ data1_line_group.selectAll(".data1-line").data(data1)
     .duration(d => d.X*200)
     .attr("y1", (d, i) => i<size-1?Y(d.Y):null)
     .attr("y2", (d, i) => i<size-1?Y(data1[i+1].Y):null)
-const data1_data_points = data1_line_group.selectAll(".data1-data-points").data(data1)
-data1_data_points.enter().append("circle").classed("data1-data-points data-points", true)
-.attr("cx", d => X(d.X))
-.attr("cy", graphheight)
-.attr("r", "0.6%" )
-.transition()
-.duration(d => d.X*200)
-.attr("cy", d => Y(d.Y))
+
+  const data1_data_points = data1_line_group.selectAll(".data1-data-points").data(data1)
+      data1_data_points.enter().append("circle").classed("data1-data-points data-points", true)
+            .attr("cx", d => X(d.X))
+            .attr("cy", graphheight)
+            .attr("r", "0.75%" )
+            .transition()
+            .duration(d => d.X*200)
+            .attr("cy", d => Y(d.Y))
 
 
 
@@ -143,43 +144,15 @@ data2_line_group.selectAll(".data2-line").data(data2)
     .attr("y1", (d, i) => i<size-1?Y(d.Y):null)
     .attr("y2", (d, i) => i<size-1?Y(data2[i+1].Y):null)
 const data2_data_points = data2_line_group.selectAll(".data2-data-points").data(data2)
-data2_data_points.enter().append("circle").classed("data2-data-points data-points", true)
-.attr("cx", d => X(d.X))
-.attr("cy", graphheight)
-.attr("r", "0.6%" )
-.transition()
-.duration(d => d.X*200)
-.attr("cy", d => Y(d.Y))
+      data2_data_points.enter().append("circle").classed("data2-data-points data-points", true)
+          .attr("cx", d => X(d.X))
+          .attr("cy", graphheight)
+          .attr("r", "0.75%" )
+          .transition()
+          .duration(d => d.X*200)
+          .attr("cy", d => Y(d.Y))
 
-//FOR DASHED LINES
-const dashCount = 25
-const dash_y = d3.scaleBand()
-                  .range([graphheight, 0])
-                  .domain(new Array(dashCount).fill(0).map((d,i) => i))
-const dash = new Array(dashCount).fill(0)
 
-const dash_line_group = graph.append("g").append("line").classed("dash",true)
-  .attr("y1", 0)//(d,i) => dash_y(i))
-  .attr("y2", graphheight)//(d,i) => dash_y(i) + (dash_y.bandwidth()/2))
-  .attr("x1", graphwidth/2)//(d,i) => graphwidth/2)
-  .attr("x2", graphwidth/2)//graphwidth/2)
-  .style("opacity", 0)
-
-graph.on("mousemove", () =>{
-    
-    let coordinate = d3.mouse(graph.node())
-    let pos = data1.map(d => Math.sqrt((coordinate[0] - X(d.X))**2))
-    let min_index = pos.indexOf(d3.min(pos))
-    let x = X(data1[min_index].X)
-    dash_line_group
-    .transition()
-    .duration(100)
-    .attr("x1", x).attr("x2",x)
-    
-})
-graph.on("mouseover", () => {
-    dash_line_group.style("opacity", 1)
-})
 
 //LABELS OF AXIS
 const XaxisLabel = graph.append("g")
@@ -282,21 +255,77 @@ const info2_text = tooltip_group.append("text").attr("stroke", "yellow").attr("s
                               .attr("y", "7.5%")
                               .attr("fill", "white")
 
-  graph.selectAll(".data-points")
-        .on("mouseover", (d,i) => {
-          let index = i%20
-          let pos = d3.mouse(graph.node())
+
+
+
+
+
+
+
+//FOR DASHED LINES
+//MAKE TRANSPARENT RECT AND WHEN ON ANY DRAW THE LINE
+const Width = (X(1) - X(0))
           
-          tooltip_group.attr("transform", `translate(${pos[0]+5}, ${pos[1]-50})`)
-                        .attr("opacity", "0.7")
-          info1_text.text(data1[index].Y.toFixed(2) + " k")
-          info2_text.text(data2[index].Y.toFixed(2) + " k")
 
+graph.selectAll(".trap").data(new Array(21).fill(0).map((d,i) => i))
+.enter().append("rect").classed("trap", true)
+      .attr("width", Width)
+      .attr("height", graphheight)
+      .attr("x", d => X(d+0.5))
+      .attr("y", 0)
+      .attr("fill", "none")
+      .attr("stroke", "none")
+
+
+const dash_line_group = graph.append("g").append("line").classed("dash",true)
+  .attr("y1", 0)
+  .attr("y2", graphheight)
+  .attr("x1", graphwidth/2)
+  .attr("x2", graphwidth/2)
+  .style("opacity", 0)
+
+graph.selectAll(".trap")
+      .on("mouseover", (d,i,n) => {
+
+        if(i == size){return}
+        info1_text.text(data1[i].Y.toFixed(2) + " k")
+        info2_text.text(data2[i].Y.toFixed(2) + " k")        
+        
+      
+
+        dash_line_group.style("opacity", 1)
+        dash_line_group
+        .transition()
+        .duration(100)
+        .attr("x1", X(d+1)).attr("x2",X(d+1))
+         
+        d3.selectAll(".data-points")
+        .each((D,j,n) => {
+          if(j == i || j == i+20){
+              let x  = X(D.X)
+              let y  = Y(D.Y)
+              tooltip_group.attr("transform", "translate("+ x +"," +y +")" )
+              tooltip_group.attr("opacity", 0.7)
+                d3.select(n[j])
+                  .attr("transform", `translate(${x} ${y}) scale(1.4) translate(-${x} -${y})`)
+                  
                 
-})
-.on("mouseout", () => {
-  
-  tooltip_group
-  .attr("opacity", "0")
-
-})
+          }
+        })
+      })
+      .on("mouseout", (d,i,n) => {
+        
+       tooltip_group.attr("opacity", 0)
+         
+        d3.selectAll(".data-points")
+        .each((D,j,n) => {
+          if(j == i || j == i+20){
+              let x  = X(D.X)
+              let y  = Y(D.Y)
+                d3.select(n[j])
+                  .attr("transform", `translate(${x} ${y}) scale(1) translate(-${x} -${y})`)
+                  
+                
+          }
+        })
+      })
