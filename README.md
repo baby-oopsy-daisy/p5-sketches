@@ -26,6 +26,7 @@ Note : If working with api's which allow only HTTP request
 ---
 ## INCOMPLETE
   - ### [FunctionVisualization(y = x^2)](https://baby-oopsy-daisy.github.io/sketches/incomplete/functionVisual)
+  - ### [Particle Interaction](https://baby-oopsy-daisy.github.io/sketches/incomplete/particle_moving_interacing)
 
 ---
 ## CSS
