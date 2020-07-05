@@ -24,8 +24,8 @@ Note : If working with api's which allow only HTTP request
 
 ---
 ## DUE
-- ### [Linear Regression](https://baby-oopsy-daisy.github.io/sketches/due/LinearRegression)
-- ### [GIFY](https://baby-oopsy-daisy.github.io/sketches/due/gify(project2))
+- ### [Linear Regression](https://baby-oopsy-daisy.github.io/sketches/due/Linear Regression)
+- ### [GIFY](https://baby-oopsy-daisy.github.io/sketches/due/gifify(project 2))
 - ### [Titanic DaatSet](https://baby-oopsy-daisy.github.io/sketches/due/titanic)
 
 ---
