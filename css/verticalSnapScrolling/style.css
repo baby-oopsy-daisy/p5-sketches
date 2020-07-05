@@ -1,0 +1,51 @@
+*{
+    box-sizing: border-box;
+  }
+  body{
+    margin: 0;
+    padding: 0;
+    overflow-y: hidden;
+    background-color: wheat;
+    font-size: 4vw;
+  }
+  .container{
+    width: 80vw;
+    height: 80vh;
+    margin: 10vh 10vw;
+    text-align: center;
+    
+  }
+  
+  header{
+    background-color:black;
+    color: white;
+    height: 10%;
+    margin: 10px;
+  }
+  
+  footer{
+    margin: 10px;
+    background-color:black;
+    color: white;
+    height: 10%;
+  }
+  
+  .main{
+    height: 80%;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    scrollbar-width: none;  
+    font-size: 300%;
+  }
+  
+  .child{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    scroll-snap-align: start;
+    color: white;
+    margin: 10px;
+  }
+  
+  
