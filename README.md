@@ -39,7 +39,7 @@ Note : If working with api's which allow only HTTP request
 - ### [Titanic DaatSet](https://baby-oopsy-daisy.github.io/sketches/due/titanic)
 
 ---
-## P5
+## p5.JS
  - ### [Flow Field](https://baby-oopsy-daisy.github.io/sketches/p5/Flow_field)
  - ### [Perceptron](https://baby-oopsy-daisy.github.io/sketches/p5/perceptron)
  - ### [International Space Station Tracking](https://baby-oopsy-daisy.github.io/sketches/p5/ISSmap)
