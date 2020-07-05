@@ -11,38 +11,38 @@ Note : If working with api's which allow only HTTP request
 ---
 ## D3.JS (Data driven Documents)
  - **Bar Chart**
-   - ### [Bar Chart Generator](https://baby-oopsy-daisy.github.io/sketches/d3/barChart/1.0)
-   - ### [Bar Chart Animated](https://baby-oopsy-daisy.github.io/sketches/d3/barChart/2.0)
- - ### [Line graph with Data Change feature](https://baby-oopsy-daisy.github.io/sketches/d3/changinglines)
+   - ### [Bar Chart Generator](https://prem-jeet.github.io/sketches/d3/barChart/1.0)
+   - ### [Bar Chart Animated](https://prem-jeet.github.io/sketches/d3/barChart/2.0)
+ - ### [Line graph with Data Change feature](https://prem-jeet.github.io/sketches/d3/changinglines)
  - **Clustering**
-   - ### [Simple](https://baby-oopsy-daisy.github.io/sketches/d3/clustering/1.0)
-   - ### [With feature to change Data Set](https://baby-oopsy-daisy.github.io/sketches/d3/clustering/2.0)
-   - ### [With moving data points](https://baby-oopsy-daisy.github.io/sketches/d3/clustering/moving_cluster)
- - ### [Landing Page](https://baby-oopsy-daisy.github.io/sketches/d3/landingPage)
- - ### [Normal Distribution](https://baby-oopsy-daisy.github.io/sketches/d3/normaldistribution)
- - ### [Randomness of Random](https://baby-oopsy-daisy.github.io/sketches/d3/randomnessOfRandom)
+   - ### [Simple](https://prem-jeet.github.io/sketches/d3/clustering/1.0)
+   - ### [With feature to change Data Set](https://prem-jeet.github.io/sketches/d3/clustering/2.0)
+   - ### [With moving data points](https://prem-jeet.github.io/sketches/d3/clustering/moving_cluster)
+ - ### [Landing Page](https://prem-jeet.github.io/sketches/d3/landingPage)
+ - ### [Normal Distribution](https://prem-jeet.github.io/sketches/d3/normaldistribution)
+ - ### [Randomness of Random](https://prem-jeet.github.io/sketches/d3/randomnessOfRandom)
 
 
 ---
 ## INCOMPLETE
-  - ### [FunctionVisualization(y = x^2)](https://baby-oopsy-daisy.github.io/sketches/incomplete/functionVisual)
-  - ### [Particle Interaction](https://baby-oopsy-daisy.github.io/sketches/incomplete/particle_moving_interacing)
+  - ### [FunctionVisualization(y = x^2)](https://prem-jeet.github.io/sketches/incomplete/functionVisual)
+  - ### [Particle Interaction](https://prem-jeet.github.io/sketches/incomplete/particle_moving_interacing)
 
 ---
 ## CSS
-  - ### [Horizontal Snap Scrolling](https://baby-oopsy-daisy.github.io/sketches/css/horizontalSapScroll)
-  - ### [Vertical Snap Scrolling](https://baby-oopsy-daisy.github.io/sketches/css/verticalSnapScrolling)
-  - ### [Window Resize Monitor](https://baby-oopsy-daisy.github.io/sketches/css/windowResizeMonitor)
+  - ### [Horizontal Snap Scrolling](https://prem-jeet.github.io/sketches/css/horizontalSapScroll)
+  - ### [Vertical Snap Scrolling](https://prem-jeet.github.io/sketches/css/verticalSnapScrolling)
+  - ### [Window Resize Monitor](https://prem-jeet.github.io/sketches/css/windowResizeMonitor)
 
 ---
 ## DUE
-  - ### [Linear Regression](https://baby-oopsy-daisy.github.io/sketches/due/LinearRegression)
-  - ### [GIFY](https://baby-oopsy-daisy.github.io/sketches/due/gifify)
-  - ### [Titanic DaatSet](https://baby-oopsy-daisy.github.io/sketches/due/titanic)
+  - ### [Linear Regression](https://prem-jeet.github.io/sketches/due/LinearRegression)
+  - ### [GIFY](https://prem-jeet.github.io/sketches/due/gifify)
+  - ### [Titanic DaatSet](https://prem-jeet.github.io/sketches/due/titanic)
 
 ---
 ## p5.JS
-  - ### [Flow Field](https://baby-oopsy-daisy.github.io/sketches/p5/Flow_field)
-  - ### [Perceptron](https://baby-oopsy-daisy.github.io/sketches/p5/perceptron)
-  - ### [International Space Station Tracking](https://baby-oopsy-daisy.github.io/sketches/p5/ISSmap)
-  - ### [weather](https://baby-oopsy-daisy.github.io/sketches/p5/weather)
+  - ### [Flow Field](https://prem-jeet.github.io/sketches/p5/Flow_field)
+  - ### [Perceptron](https://prem-jeet.github.io/sketches/p5/perceptron)
+  - ### [International Space Station Tracking](https://prem-jeet.github.io/sketches/p5/ISSmap)
+  - ### [weather](https://prem-jeet.github.io/sketches/p5/weather)
