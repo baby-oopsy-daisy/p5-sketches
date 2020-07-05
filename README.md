@@ -23,15 +23,15 @@ Note : If working with api's which allow only HTTP request
 - ### [Randomness of Random](https://baby-oopsy-daisy.github.io/sketches/d3/randomnessOfRandom)
 
 ---
-## DUE
-- ### [Linear Regression](https://baby-oopsy-daisy.github.io/sketches/due/Linear Regression)
-- ### [GIFY](https://baby-oopsy-daisy.github.io/sketches/due/gifify(project 2))
-- ### [Titanic DaatSet](https://baby-oopsy-daisy.github.io/sketches/due/titanic)
-
----
 ## INCOMPLETE
  - ### [FunctionVisualization(y = x^2)](https://baby-oopsy-daisy.github.io/sketches/incomplete/functionVisual)
  
+---
+## DUE
+- ### [Linear Regression](https://baby-oopsy-daisy.github.io/sketches/due/LinearRegression)
+- ### [GIFY](https://baby-oopsy-daisy.github.io/sketches/due/gifify)
+- ### [Titanic DaatSet](https://baby-oopsy-daisy.github.io/sketches/due/titanic)
+
 ---
 ## P5
  - ### [Flow Field](https://baby-oopsy-daisy.github.io/sketches/p5/Flow_field)
