@@ -10,7 +10,9 @@ Note : If working with api's which allow only HTTP request
           
 ---
 ## D3.JS (Data driven Documents)
-- ### [Bar Chart Generator](https://baby-oopsy-daisy.github.io/d3/barChart)
+- **Bar Chart**
+  - ### [Bar Chart Generator](https://baby-oopsy-daisy.github.io/d3/barChart/1.0)
+  - ### [Bar Chart Animated](https://baby-oopsy-daisy.github.io/d3/barChart/2.0)
 - ### [Line graph with Data Change feature](https://baby-oopsy-daisy.github.io/d3/changinglines)
 - **clustering**
   - ### [Simple](https://baby-oopsy-daisy.github.io/d3/clustering/1.0)
