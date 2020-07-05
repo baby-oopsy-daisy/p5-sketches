@@ -14,7 +14,7 @@ Note : If working with api's which allow only HTTP request
   - ### [Bar Chart Generator](https://baby-oopsy-daisy.github.io/d3/barChart/1.0)
   - ### [Bar Chart Animated](https://baby-oopsy-daisy.github.io/d3/barChart/2.0)
 - ### [Line graph with Data Change feature](https://baby-oopsy-daisy.github.io/d3/changinglines)
-- **clustering**
+- **Clustering**
   - ### [Simple](https://baby-oopsy-daisy.github.io/d3/clustering/1.0)
   - ### [With feature to change Data Set](https://baby-oopsy-daisy.github.io/d3/clustering/2.0)
   - ### [With moving data points](https://baby-oopsy-daisy.github.io/d3/clustering/moving_cluster)
