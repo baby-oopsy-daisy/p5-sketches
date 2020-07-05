@@ -25,7 +25,13 @@ Note : If working with api's which allow only HTTP request
 ---
 ## INCOMPLETE
  - ### [FunctionVisualization(y = x^2)](https://baby-oopsy-daisy.github.io/sketches/incomplete/functionVisual)
- 
+
+---
+## CSS
+- ### [Horizontal Snap Scrolling](https://baby-oopsy-daisy.github.io/sketches/css/horizontalSapScroll)
+- ### [Vertical Snap Scrolling](https://baby-oopsy-daisy.github.io/sketches/css/verticalSnapScrolling)
+- ### [Window Resize Monitor](https://baby-oopsy-daisy.github.io/sketches/css/windowResizeMonitor)
+
 ---
 ## DUE
 - ### [Linear Regression](https://baby-oopsy-daisy.github.io/sketches/due/LinearRegression)
