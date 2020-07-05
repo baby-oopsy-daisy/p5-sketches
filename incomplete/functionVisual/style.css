@@ -1,0 +1,20 @@
+*{
+    box-shadow: border-box;
+  }
+  body{
+    margin: 0;
+    padding: 0;
+    
+  }
+  div{
+    width: 600px;
+    margin: auto;
+    margin-top: 20px;
+  }
+  
+  .svg{
+    background-color: wheat;
+    border-radius: 30px;
+    box-shadow: 3px 3px 10px inset black, -3px -3px 10px inset white
+  }
+  
