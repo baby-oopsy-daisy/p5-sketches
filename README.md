@@ -27,8 +27,9 @@ Note : If working with api's which allow only HTTP request
 ## INCOMPLETE
   - ### [FunctionVisualization(y = x^2)](https://prem-jeet.github.io/sketches/incomplete/functionVisual)
   - ### [Particle Interaction canvas](https://prem-jeet.github.io/sketches/incomplete/particle_moving_interacing)
-  - ### [Particle Interaction svg](https://prem-jeet.github.io/sketches/incomplete/particle_interaction_svg)
-
+  - ### [Particle Interaction svg](https://prem-jeet.github.io/sketches/incomplete/particle_interaction_svg) 
+  <img src="img/particle_interaction_svg.gif" width="200" height="200">
+    
 ---
 ## CSS
   - ### [Horizontal Snap Scrolling](https://prem-jeet.github.io/sketches/css/horizontalSapScroll)
