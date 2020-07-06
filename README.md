@@ -39,11 +39,11 @@ Note : If working with api's which allow only HTTP request
 ---
 ## CSS
   - ### [Horizontal Snap Scrolling](https://prem-jeet.github.io/sketches/css/horizontalSapScroll)
-              <a href="https://prem-jeet.github.io/sketches/css/horizontalSapScroll"><img src="img/horizontalSapScroll.gif" width="400" height="200">
+       <a href="https://prem-jeet.github.io/sketches/css/horizontalSapScroll"><img src="img/horizontalSapScroll.gif" width="400" height="200">
   - ### [Vertical Snap Scrolling](https://prem-jeet.github.io/sketches/css/verticalSnapScrolling)
-                     <a href="https://prem-jeet.github.io/sketches/css/verticalSnapScrolling"><img src="img/verticalSnapScrolling.gif" width="400" height="200">
+       <a href="https://prem-jeet.github.io/sketches/css/verticalSnapScrolling"><img src="img/verticalSnapScrolling.gif" width="400" height="200">
   - ### [Window Resize Monitor](https://prem-jeet.github.io/sketches/css/windowResizeMonitor)
-                            <a href="https://prem-jeet.github.io/sketches/css/windowResizeMonitor"><img src="img/windowResizeMonitor.gif" width="400" height="200">
+       <a href="https://prem-jeet.github.io/sketches/css/windowResizeMonitor"><img src="img/windowResizeMonitor.gif" width="400" height="200">
 
 ---
 ---
