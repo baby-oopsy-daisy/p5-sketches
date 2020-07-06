@@ -2,11 +2,7 @@
 
 All my  sketches goes here
 
-Note : If working with api's which allow only HTTP request
-       ADD : "https://cors-anywhere.herokuapp.com/"
-          before the api HTTP url to be able to use it in github gh-pages hosting
-          (as hosting gh-pages only allows HTTPS request if a custom domain is not set i.e if              
-          you are using the default github provided domain)
+
 ---
 ---
 ---
@@ -61,3 +57,14 @@ Note : If working with api's which allow only HTTP request
   - ### [Perceptron](https://prem-jeet.github.io/sketches/p5/perceptron)
   - ### [International Space Station Tracking](https://prem-jeet.github.io/sketches/p5/ISSmap)
   - ### [weather](https://prem-jeet.github.io/sketches/p5/weather)
+
+---
+---
+---
+
+Note : If working with api's which allow only HTTP request
+       ADD : "https://cors-anywhere.herokuapp.com/"
+          before the api HTTP url to be able to use it in github gh-pages hosting
+          (as hosting gh-pages only allows HTTPS request if a custom domain is not set i.e if              
+          you are using the default github provided domain)
+
