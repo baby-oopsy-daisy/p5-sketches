@@ -1,0 +1,19 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: radial-gradient( rgba(255, 0, 0, 0.288), rgba(87, 87, 114, 0.164));
+}
+
+.svg{
+    border-radius: 50px;
+    background-color: rgb(98, 202, 216);
+    box-shadow: 0px 0px 10px red;
+}
