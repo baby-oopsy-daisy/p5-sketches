@@ -35,9 +35,11 @@ All my  sketches goes here
        <a href="https://prem-jeet.github.io/sketches/force/simple_crawler_inSVG"><img src="img/particle_interaction_svg.gif" width="400" height="200">
   - ### [Crawler and Particle System with force](https://prem-jeet.github.io/sketches/force/particle_crawler_with_force_p5) 
        <a href="https://prem-jeet.github.io/sketches/force/particle_crawler_with_force_p5"><img src="img/particle_crawler_with_force_p5.gif" width="200" height="200">
+
 ---
 ---
 ---
+
 ## INCOMPLETE
 
   - ### [FunctionVisualization(y = x^2)](https://prem-jeet.github.io/sketches/incomplete/functionVisual)
@@ -67,7 +69,7 @@ All my  sketches goes here
 ---
 ## p5.JS
   - ### [Flow Field](https://prem-jeet.github.io/sketches/p5/Flow_field)
-       <a href="https://prem-jeet.github.io/sketches/p5/Flow_field"><img src="img/Flow_field.gif" width="300" height="300">
+       <a href="https://prem-jeet.github.io/sketches/p5/Flow_field"><img src="img/Flow_field.gif" width="200" height="200">
   - ### [Perceptron](https://prem-jeet.github.io/sketches/p5/perceptron)
   - ### [International Space Station Tracking](https://prem-jeet.github.io/sketches/p5/ISSmap)
   - ### [weather](https://prem-jeet.github.io/sketches/p5/weather)
