@@ -30,11 +30,11 @@ All my  sketches goes here
 ---
 ## FORCE
   - ### [Simple Crawler in p5](https://prem-jeet.github.io/sketches/force/particle_moving_interacing)
-       <a href="https://prem-jeet.github.io/sketches/force/simple_crawler_inp5"><img src="img/particle_moving_interacing.gif" width="400" height="200">
-   - ### [Simple Crawler in svg](https://prem-jeet.github.io/sketches/force/particle_interaction_svg) 
+       <a href="https://prem-jeet.github.io/sketches/force/simple_crawler_inp5"><img src="img/particle_moving_interacing.gif" width="200" height="200">
+  - ### [Simple Crawler in svg](https://prem-jeet.github.io/sketches/force/particle_interaction_svg) 
        <a href="https://prem-jeet.github.io/sketches/force/simple_crawler_inSVG"><img src="img/particle_interaction_svg.gif" width="400" height="200">
-   - ### [Crawler and Particle System with force](https://prem-jeet.github.io/sketches/force/particle_crawler_with_force_p5) 
-       <a href="https://prem-jeet.github.io/sketches/force/particle_crawler_with_force_p5"><img src="img/particle_crawler_with_force_p5.gif" width="400" height="200">
+  - ### [Crawler and Particle System with force](https://prem-jeet.github.io/sketches/force/particle_crawler_with_force_p5) 
+       <a href="https://prem-jeet.github.io/sketches/force/particle_crawler_with_force_p5"><img src="img/particle_crawler_with_force_p5.gif" width="200" height="200">
 ---
 ---
 ---
