@@ -6,7 +6,7 @@ let closeCount = 10;
 function setup(){
 /* YOUR CODE GOES HERE */
     console.clear();
-    createCanvas(600, 600);
+    createCanvas(window.innerWidth, window.innerHeight);
     particles = new Array(particleCount).fill(0).map(d => new PARTICLE())
     movers = new Array(moversCount).fill(0).map(d => new MOVER())
     
