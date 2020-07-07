@@ -25,8 +25,16 @@ All my  sketches goes here
       <a href="https://prem-jeet.github.io/sketches/d3/landingPage"><img src="img/landingPage.gif" width="400" height="200">
  - ### [Normal Distribution](https://prem-jeet.github.io/sketches/d3/normaldistribution)
       <a href="https://prem-jeet.github.io/sketches/d3/normaldistribution"><img src="img/normaldistribution.gif" width="400" height="200"> 
- 
-
+---
+---
+---
+## FORCE
+  - ### [Simple Crawler in p5](https://prem-jeet.github.io/sketches/force/particle_moving_interacing)
+       <a href="https://prem-jeet.github.io/sketches/force/simple_crawler_inp5"><img src="img/particle_moving_interacing.gif" width="400" height="200">
+   - ### [Simple Crawler in svg](https://prem-jeet.github.io/sketches/force/particle_interaction_svg) 
+       <a href="https://prem-jeet.github.io/sketches/force/simple_crawler_inSVG"><img src="img/particle_interaction_svg.gif" width="400" height="200">
+   - ### [Crawler and Particle System with force](https://prem-jeet.github.io/sketches/force/particle_crawler_with_force_p5) 
+       <a href="https://prem-jeet.github.io/sketches/force/particle_crawler_with_force_p5"><img src="img/particle_crawler_with_force_p5.gif" width="400" height="200">
 ---
 ---
 ---
@@ -34,10 +42,7 @@ All my  sketches goes here
 
   - ### [FunctionVisualization(y = x^2)](https://prem-jeet.github.io/sketches/incomplete/functionVisual)
        <a href="https://prem-jeet.github.io/sketches/incomplete/functionVisual"><img src="img/functionVisual.gif" width="400" height="200">
-  - ### [Particle Interaction canvas](https://prem-jeet.github.io/sketches/incomplete/particle_moving_interacing)
-       <a href="https://prem-jeet.github.io/sketches/incomplete/particle_moving_interacing"><img src="img/particle_moving_interacing.gif" width="400" height="200">
-  - ### [Particle Interaction svg](https://prem-jeet.github.io/sketches/incomplete/particle_interaction_svg) 
-       <a href="https://prem-jeet.github.io/sketches/incomplete/particle_interaction_svg"><img src="img/particle_interaction_svg.gif" width="400" height="200">
+  
 ---
 ---
 ---
