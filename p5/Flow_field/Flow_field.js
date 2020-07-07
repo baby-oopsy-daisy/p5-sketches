@@ -4,10 +4,10 @@ let zoff = 0;
 let time = 0.006;
 
 
-let increment = 0.1;
+let increment = 0.15;
 
-let w = window.innerWidth
-let h = window.innerHeight
+let w = window.innerWidth*0.80
+let h = window.innerHeight*0.80
 function setup() {
   createCanvas(w,h);
 
@@ -38,5 +38,15 @@ function draw() {
   zoff += time;
 
 
+  
+}
+
+function resetSpeed(){
+  let slider = document.getElementById("slider")
+  
+  
+  time = slider.value/100
+  
+  
   
 }

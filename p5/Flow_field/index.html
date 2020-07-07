@@ -10,10 +10,15 @@
 
   <!-- This line removes any default padding and style.
        You might only need one of these values set. -->
-  <style> body { padding: 0; margin: 0; } </style>
+  <style> 
+  *{box-sizing: border-box;}
+  body { padding: 0; margin: 0; }
+  canvas{margin-left: 10vw; margin-top: 10vh;} 
+  #slider{width: 80vw; margin-left: 10vw; margin-top:2vh;}
+  </style>
 </head>
 
 <body>
-  
+  <input id="slider" type="range" min="0.2" max="1" step="any"  oninput="resetSpeed()">
 </body>
 </html>
