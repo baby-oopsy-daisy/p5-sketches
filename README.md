@@ -67,6 +67,7 @@ All my  sketches goes here
 ---
 ## p5.JS
   - ### [Flow Field](https://prem-jeet.github.io/sketches/p5/Flow_field)
+       <a href="https://prem-jeet.github.io/sketches/p5/Flow_field"><img src="img/Flow_field.gif" width="300" height="300">
   - ### [Perceptron](https://prem-jeet.github.io/sketches/p5/perceptron)
   - ### [International Space Station Tracking](https://prem-jeet.github.io/sketches/p5/ISSmap)
   - ### [weather](https://prem-jeet.github.io/sketches/p5/weather)
