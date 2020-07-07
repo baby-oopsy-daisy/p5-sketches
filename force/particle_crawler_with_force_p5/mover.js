@@ -2,14 +2,15 @@ class MOVER{
     constructor(x , y){
         this.range = 2
         this.force = createVector(Number(random(-this.range, this.range).toFixed(2)), Number(random(-this.range, this.range).toFixed(2)))
-        this.r = ((this.force.x + this.force.y)/2)*5;
+        this.r = ((Math.abs(this.force.x) + Math.abs(this.force.y)))*5;
         this.closest = null;
         this.location = createVector( x==undefined?random(this.r, width-this.r):x , y==undefined?random(this. r, height-this.r):y);
+        this.color = createVector(random(2,224), random(2,224), random(2,224))
     }
     
     display(){ // SHOW THE MOVER
         stroke(0);
-        fill("#fa1616");
+        fill(this.color.x, this.color.y, this.color.z, 100);
         circle(this.location.x, this.location.y, this.r);
     }
 
@@ -47,7 +48,7 @@ class MOVER{
 
     drawLineToClosest(){// DRAW LINE TO THE CLOSEST  
         noFill()
-        stroke("#6a197d40")
+        stroke("#6a197d30")
         strokeWeight(1)
         this.closest.forEach(e => {
             let x1 = this.location.x; 
