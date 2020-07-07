@@ -25,7 +25,7 @@ setInterval(() => {
 }, 3000);
 
 function draw(){
-    background("#ffeadb80");
+    background(0);
 
     
     movers.forEach(e =>{//FIND AND DRAW LINE TO CLOSEST

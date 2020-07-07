@@ -9,8 +9,9 @@ class MOVER{
     }
     
     display(){ // SHOW THE MOVER
-        stroke(0);
-        fill(this.color.x, this.color.y, this.color.z, 100);
+        strokeWeight(1);
+        stroke(255);
+        fill(this.color.x, this.color.y, this.color.z, 200);
         circle(this.location.x, this.location.y, this.r);
     }
 
@@ -48,7 +49,7 @@ class MOVER{
 
     drawLineToClosest(){// DRAW LINE TO THE CLOSEST  
         noFill()
-        stroke("#6a197d30")
+        stroke(255,50)
         strokeWeight(1)
         this.closest.forEach(e => {
             let x1 = this.location.x; 

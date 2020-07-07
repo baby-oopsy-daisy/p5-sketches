@@ -9,7 +9,7 @@ class PARTICLE{
 
     display(){// SHOW THE PARTICLES
         noStroke()
-        fill("#393e4680")
+        fill("#393e46d0")
         circle(this.location.x, this.location.y, this.r)
     }
 
