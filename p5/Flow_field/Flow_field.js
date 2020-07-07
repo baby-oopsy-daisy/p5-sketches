@@ -44,8 +44,8 @@ function draw() {
 function resetSpeed(){
   let slider = document.getElementById("slider")
   
-  
-  time = slider.value/100
+  let div = (width+height)/10
+  time = slider.value/div
   
   
   
