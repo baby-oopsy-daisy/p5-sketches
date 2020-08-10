@@ -15,28 +15,40 @@ All my  stuff goes here
 ---
 ---
 ---
-## D3 JS (Data driven Documents)
+
+## D3 JS
+ 
  - **Bar Chart**
+   
    - ### [Bar Chart Generator](https://prem-jeet.github.io/sketches/d3/barChart/1.0)
         <a href="https://prem-jeet.github.io/sketches/d3/barChart/1.0"><img src="img/barChart_1.0.gif" width="400" height="200">
+   
    - ### [Bar Chart Animated](https://prem-jeet.github.io/sketches/d3/barChart/2.0)
         <a href="https://prem-jeet.github.io/sketches/d3/barChart/2.0"><img src="img/barChart_2.0.gif" width="400" height="200">
+   
    - ### [Line graph with Data Change feature](https://prem-jeet.github.io/sketches/d3/changinglines)
         <a href="https://prem-jeet.github.io/sketches/d3/changinglines"><img src="img/changinglines.gif" width="400" height="200">
+ 
  - **Clustering**
+ 
    - ### [Simple](https://prem-jeet.github.io/sketches/d3/clustering/1.0)
-        <a href="https://prem-jeet.github.io/sketches/d3/clustering/1.0"><img src="img/clustering_1.0.gif" width="400" height="300">
+          <a href="https://prem-jeet.github.io/sketches/d3/clustering/1.0"><img src="img/clustering_1.0.gif" width="400" height="300">
+
    - ### [With feature to change Data Set](https://prem-jeet.github.io/sketches/d3/clustering/2.0)
-        <a href="https://prem-jeet.github.io/sketches/d3/clustering/2.0"><img src="img/clustering_2.0.gif" width="400" height="200">
+          <a href="https://prem-jeet.github.io/sketches/d3/clustering/2.0"><img src="img/clustering_2.0.gif" width="400" height="200">
+
    - ### [With moving data points](https://prem-jeet.github.io/sketches/d3/clustering/moving_cluster)
-        <a href="https://prem-jeet.github.io/sketches/d3/clustering/moving_cluster"><img src="img/clustering_moving_cluster.gif" width="400" height="300">
- - ### [Landing Page](https://prem-jeet.github.io/sketches/d3/landingPage)
-      <a href="https://prem-jeet.github.io/sketches/d3/landingPage"><img src="img/landingPage.gif" width="400" height="200">
- - ### [Normal Distribution](https://prem-jeet.github.io/sketches/d3/normaldistribution)
-      <a href="https://prem-jeet.github.io/sketches/d3/normaldistribution"><img src="img/normaldistribution.gif" width="400" height="200"> 
+          <a href="https://prem-jeet.github.io/sketches/d3/clustering/moving_cluster"><img src="img/clustering_moving_cluster.gif" width="400" height="300">
+
+   - ### [Landing Page](https://prem-jeet.github.io/sketches/d3/landingPage)
+        <a href="https://prem-jeet.github.io/sketches/d3/landingPage"><img src="img/landingPage.gif" width="400" height="200">
+
+   - ### [Normal Distribution](https://prem-jeet.github.io/sketches/d3/normaldistribution)
+        <a href="https://prem-jeet.github.io/sketches/d3/normaldistribution"><img src="img/normaldistribution.gif" width="400" height="200"> 
 ---
 ---
 ---
+       
 ## FORCE
   - ### [Simple Crawler in p5](https://prem-jeet.github.io/sketches/force/particle_moving_interacing)
        <a href="https://prem-jeet.github.io/sketches/force/simple_crawler_inp5"><img src="img/particle_moving_interacing.gif" width="200" height="200">
@@ -64,6 +76,7 @@ All my  stuff goes here
 ---
 ---
 ---
+
 ## CSS
   
   - ### [Horizontal Snap Scrolling](https://prem-jeet.github.io/sketches/css/horizontalSapScroll)
