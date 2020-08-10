@@ -3,9 +3,9 @@
 All my  stuff goes here
 
 # Content
- - [D3.js](#d3.js)
+ - [D3.js](#d3-js)
  - [Force](#force)
- - [p5.js](#p5.js)
+ - [p5.js](#p5-js)
  - [CSS](#css)
  - [Web Page Design](#web-page-design)
  - [Due](#due)
@@ -15,7 +15,7 @@ All my  stuff goes here
 ---
 ---
 ---
-## D3.JS (Data driven Documents)
+## D3 JS (Data driven Documents)
  - **Bar Chart**
    - ### [Bar Chart Generator](https://prem-jeet.github.io/sketches/d3/barChart/1.0)
         <a href="https://prem-jeet.github.io/sketches/d3/barChart/1.0"><img src="img/barChart_1.0.gif" width="400" height="200">
@@ -49,7 +49,7 @@ All my  stuff goes here
 ---
 ---
 
-## p5.JS
+## p5-JS
   
   - ### [Flow Field](https://prem-jeet.github.io/sketches/p5/Flow_field)
        <a href="https://prem-jeet.github.io/sketches/p5/Flow_field"><img src="img/Flow_field.gif" width="200" height="200">
