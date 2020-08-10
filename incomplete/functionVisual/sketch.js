@@ -6,7 +6,7 @@ const fun = (d) =>{
 console.clear();
 
 //USEFUL VARIABES
-let range = [-10,10]
+let range = [-20, 20]
 const svgwidth = 600;
 const svgheight = 600;
 const margin = {
@@ -151,7 +151,7 @@ graph.append("path").classed("path", true)
         (x))    
 
 
-},4000)
+},5000)
 
 button.on("click", ()=>{
     clearInterval(id)

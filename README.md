@@ -1,6 +1,15 @@
 # sketches
 
-All my  sketches goes here
+All my  stuff goes here
+
+# Content
+ - [D3.js](#d3.js)
+ - [Force](#force)
+ - [p5.js](#p5.js)
+ - [CSS](#css)
+ - [Web Page Design](#web-page-design)
+ - [Due](#due)
+ - [Incomplete](#incomplete)
 
 
 ---
@@ -40,39 +49,61 @@ All my  sketches goes here
 ---
 ---
 
-## INCOMPLETE
+## p5.JS
+  
+  - ### [Flow Field](https://prem-jeet.github.io/sketches/p5/Flow_field)
+       <a href="https://prem-jeet.github.io/sketches/p5/Flow_field"><img src="img/Flow_field.gif" width="200" height="200">
+  
+  - ### [Perceptron](https://prem-jeet.github.io/sketches/p5/perceptron)
+  
+  - ### [International Space Station Tracking](https://prem-jeet.github.io/sketches/p5/ISSmap)
+  
+  - ### [weather](https://prem-jeet.github.io/sketches/p5/weather)
 
-  - ### [FunctionVisualization(y = x^2)](https://prem-jeet.github.io/sketches/incomplete/functionVisual)
-       <a href="https://prem-jeet.github.io/sketches/incomplete/functionVisual"><img src="img/functionVisual.gif" width="400" height="200">
   
 ---
 ---
 ---
 ## CSS
+  
   - ### [Horizontal Snap Scrolling](https://prem-jeet.github.io/sketches/css/horizontalSapScroll)
        <a href="https://prem-jeet.github.io/sketches/css/horizontalSapScroll"><img src="img/horizontalSapScroll.gif" width="400" height="200">
+ 
   - ### [Vertical Snap Scrolling](https://prem-jeet.github.io/sketches/css/verticalSnapScrolling)
        <a href="https://prem-jeet.github.io/sketches/css/verticalSnapScrolling"><img src="img/verticalSnapScrolling.gif" width="400" height="200">
+
   - ### [Window Resize Monitor](https://prem-jeet.github.io/sketches/css/windowResizeMonitor)
        <a href="https://prem-jeet.github.io/sketches/css/windowResizeMonitor"><img src="img/windowResizeMonitor.gif" width="400" height="200">
 
 ---
 ---
 ---
+
+## Web Page Design
+
+ - ### [Responsive Cactus Website Landing Page](https://prem-jeet.github.io/sketches/frontendDesign/cactus_landing_page)
+
+---
+---
+---
+
 ## DUE
+
   - ### [Linear Regression](https://prem-jeet.github.io/sketches/due/LinearRegression)
+
   - ### [GIFY](https://prem-jeet.github.io/sketches/due/gifify)
+
   - ### [Titanic DaatSet](https://prem-jeet.github.io/sketches/due/titanic)
 
 ---
 ---
 ---
-## p5.JS
-  - ### [Flow Field](https://prem-jeet.github.io/sketches/p5/Flow_field)
-       <a href="https://prem-jeet.github.io/sketches/p5/Flow_field"><img src="img/Flow_field.gif" width="200" height="200">
-  - ### [Perceptron](https://prem-jeet.github.io/sketches/p5/perceptron)
-  - ### [International Space Station Tracking](https://prem-jeet.github.io/sketches/p5/ISSmap)
-  - ### [weather](https://prem-jeet.github.io/sketches/p5/weather)
+
+## INCOMPLETE
+
+  - ### [FunctionVisualization(y = x^2)](https://prem-jeet.github.io/sketches/incomplete/functionVisual)
+       <a href="https://prem-jeet.github.io/sketches/incomplete/functionVisual"><img src="img/functionVisual.gif" width="400" height="200">
+
 
 ---
 ---
