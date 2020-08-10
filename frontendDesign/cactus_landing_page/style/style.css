@@ -1,0 +1,207 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 100%;
+  font-family: 'Roboto', sans-serif;
+  overflow: scroll;
+  scrollbar-width: none;
+}
+
+header {
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-image: url(https://images.unsplash.com/photo-1485841890310-6a055c88698a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+header h1 {
+  font-size: 3rem;
+  font-weight: 300;
+}
+
+header p {
+  font-size: 1rem;
+  padding: 10px 0px;
+}
+
+header button {
+  display: inline-block;
+  line-height: 40px;
+  padding: 0.3em 0.5em;
+  -webkit-box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+  background: #fff;
+  border: none;
+  border-radius: 0.5em;
+  font-size: 1.5em;
+  font-weight: 100;
+  text-transform: uppercase;
+  letter-spacing: .025em;
+  color: #7795f8;
+  outline: none;
+}
+
+header button:hover {
+  -webkit-box-shadow: -2px -2px 5px 0px gray inset;
+          box-shadow: -2px -2px 5px 0px gray inset;
+}
+
+main {
+  width: 100vw;
+  height: 100vh;
+  background-color: #f5f5f5;
+  margin-top: 20px;
+}
+
+main h3 {
+  font-weight: 300;
+  font-size: 1.25rem;
+  color: #6a197d;
+}
+
+main .card_container {
+  width: 80%;
+  height: 80%;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 40%;
+  height: 80%;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.card img {
+  width: 4rem;
+  height: 4rem;
+}
+
+.card h3 {
+  font-size: 1.25rem;
+  color: #0a97b0;
+  text-align: left;
+}
+
+.card p, .card a {
+  font-size: 0.8rem;
+}
+
+@media screen and (min-width: 600px) {
+  .card img {
+    width: 6rem;
+    height: 6rem;
+  }
+  .card h3 {
+    font-size: 2rem;
+    color: #0a97b0;
+    text-align: left;
+  }
+  .card p, .card a {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  header h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+  header p {
+    font-size: 0.8rem;
+  }
+  main {
+    height: auto;
+  }
+  main h3 {
+    margin: 1.85rem 0;
+    font-size: 1rem;
+  }
+  .card_container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .card {
+    width: 90%;
+    margin: 2rem;
+  }
+  .card {
+    padding: 5px;
+    border: 1px solid red;
+  }
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.flex_c {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.flex_jc_c {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.flex_jc_sa {
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.flex_ai_c {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+/* Extra Small Devices (phones, 600px and down) */
+/* Small Devices (portrait tablets an large phones, 768px and up) */
+/* Medium Devices (landscape tablets, 768px and up) */
+/* Large Devices (laptops/desktops, 992px and up) */
+/* Extra Large Screens (large laptops and desktops, 1200px and up) */
+/*# sourceMappingURL=style.css.map */
